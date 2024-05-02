@@ -12,7 +12,7 @@ const Step2 = () => {
       <div className="grid grid-cols-2 gap-3 ">
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src="http://104.248.175.101:3001/static/media/Flat.89df2add42df869d7926.png"
+            src="/img/product-builder/curtain.png"
             width={96}
             height={96}
             alt=""
@@ -23,7 +23,7 @@ const Step2 = () => {
         </div>
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src="http://104.248.175.101:3001/static/media/Outside.ab2b5750bdae021d6dd4.png"
+            src="/img/product-builder/blinds.png"
             width={96}
             height={96}
             alt=""
@@ -40,7 +40,7 @@ const Step2 = () => {
      {coverType === 'curtain' && <div className="grid grid-cols-2 gap-3 ">
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src="http://104.248.175.101:3001/static/media/Flat.89df2add42df869d7926.png"
+            src="/img/product-builder/flat.png"
             width={96}
             height={96}
             alt=""
@@ -51,7 +51,7 @@ const Step2 = () => {
         </div>
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src="http://104.248.175.101:3001/static/media/Bay.4392c8a96b604b5a04c2.png"
+            src="/img/product-builder/bay.png"
             width={96}
             height={96}
             alt=""
@@ -65,7 +65,7 @@ const Step2 = () => {
       {coverType === 'blinds' && <div className="grid grid-cols-2 gap-3 ">
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src="http://104.248.175.101:3001/static/media/Inside.1873c2eaebb6663c5536.png"
+            src="/img/product-builder/inside.png"
             width={96}
             height={96}
             alt=""
@@ -76,7 +76,7 @@ const Step2 = () => {
         </div>
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src="http://104.248.175.101:3001/static/media/Outside.ab2b5750bdae021d6dd4.png"
+            src="/img/product-builder/outside.png"
             width={96}
             height={96}
             alt=""

@@ -11,7 +11,7 @@ const Step3 = () =>{
       <div className="grid grid-cols-2 gap-3 ">
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src="http://104.248.175.101:3001/static/media/Single.bdef5a098b6b4891b2dbb832ff70aa57.svg"
+            src="/img/product-builder/single.svg"
             width={96}
             height={96}
             alt=""
@@ -22,7 +22,7 @@ const Step3 = () =>{
         </div>
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src="http://104.248.175.101:3001/static/media/Pair.d24b4c92ca2e7db838407096cabe677b.svg"
+            src="/img/product-builder/pair.svg"
             width={96}
             height={96}
             alt=""
@@ -40,7 +40,7 @@ const Step3 = () =>{
         
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src="http://104.248.175.101:3001/static/media/Double.d49f22564539a2a682ac8f6efdfbd937.svg"
+            src="/img/product-builder/double.svg"
             width={96}
             height={96}
             alt=""
@@ -52,7 +52,7 @@ const Step3 = () =>{
 
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src="http://104.248.175.101:3001/static/media/Eyelet.ce8e659bf751eb516550ae77bcd9ac12.svg"
+            src="/img/product-builder/eyelet.svg"
             width={96}
             height={96}
             alt=""
@@ -65,7 +65,7 @@ const Step3 = () =>{
 
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src="http://104.248.175.101:3001/static/media/Pencil.307ab450dd65332d2baca501749e8688.svg"
+            src="/img/product-builder/pencil.svg"
             width={96}
             height={96}
             alt=""
@@ -78,7 +78,7 @@ const Step3 = () =>{
 
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src="http://104.248.175.101:3001/static/media/Goblet.1bf50b57dc451acd34c95c82916ec6ae.svg"
+            src="/img/product-builder/goblet.svg"
             width={96}
             height={96}
             alt=""
@@ -91,7 +91,7 @@ const Step3 = () =>{
 
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src="http://104.248.175.101:3001/static/media/Triple.5cc87230fb2d647a9c774ef3b3f65c6b.svg"
+            src="/img/product-builder/triple.svg"
             width={96}
             height={96}
             alt=""
