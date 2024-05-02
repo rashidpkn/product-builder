@@ -10,7 +10,7 @@ import Step4 from "./Step4";
 import Estimate from "./Estimate";
 
 export default function ProductBuilder() {
-  const [step, setStep] = useState(5);
+  const [step, setStep] = useState(1);
   const style = new URLSearchParams(window.location.search).get('style')?.trim()?.toLowerCase()
 
   const {hangingStyle,type} = useSelector(state=>state.fabric)
