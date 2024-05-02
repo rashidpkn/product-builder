@@ -1,0 +1,112 @@
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setFabric } from "../../redux/slice/fabric";
+import { Icon } from "@iconify/react/dist/iconify.js";
+import { fabrics } from "./fabrics";
+import Step1 from "./Step1";
+import Step2 from "./Step2";
+import Step3 from "./Step3";
+import Step4 from "./Step4";
+
+export default function ProductBuilder() {
+  const [step, setStep] = useState(1);
+  const style = new URLSearchParams(window.location.search).get('style')?.trim()?.toLowerCase()
+
+  const {hangingStyle,type} = useSelector(state=>state.fabric)
+const dispatch = useDispatch()
+useEffect(() => {
+if(['double','eyelet','pencil','goblet','triple'].includes(style))  {
+    dispatch(setFabric({key:'hangingStyle',value:style}))
+}
+
+}, [])
+
+
+  return (
+    <main className="h-[calc(100vh-132.28px)] relative" style={{background:fabrics.find(e=>e.fabric === type).color}}>
+      <img
+        src="https://curtainandblindco.com.au/wp-content/uploads/2021/10/809501-Odin-Porcelain-Front-1680x920-1.jpg"
+        className="absolute w-full h-full object-cover"
+        alt=""
+      />
+
+      
+
+      <div className="absolute inset-y-0 my-auto max-h-[44rem] h-full w-[30rem] bg-white right-48 rounded-lg p-8">
+        <div className="flex justify-between items-center">
+          <div className="">
+            <h1 className="font-[Recoleta] text-4xl font-[1000] capitalize">{hangingStyle}</h1>
+            {step === 1 && <p className="text-lg">Fabric</p>}
+            {step === 2 && <p className="text-lg">Measurement</p>}
+            {step === 3 && <p className="text-lg">Style</p>}
+            {step === 4 && <p className="text-lg">Features</p>}
+            
+          </div>
+          {step !==1 && <button onClick={()=>step !==1 && setStep(step -1)} className="p-3 rounded-full border">
+            <Icon icon={'ooui:previous-ltr'} className="text-black text-2xl" />
+          </button>}
+        </div>
+        <hr className="my-8" />
+        <div className=" overflow-y-auto overflow-x-hidden h-[400px]">
+          {step === 1 && <Step1 />}
+          {step === 2 && <Step2 />}
+          {step === 3 && <Step3 />}
+          {step === 4 && <Step4 />}
+        </div>
+
+        <div
+          className="absolute bottom-0 left-0 w-full h-36 bg-white"
+          style={{ boxShadow: "0 -1px 0 rgba(0, 0, 0, .03)" }}
+        >
+          <div
+            className="w-full h-2 border-b"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .05) 100%)",
+            }}
+          ></div>
+          <div className="flex justify-center items-center h-full">
+            {step === 1 && (
+              <button
+                className="w-[50%] h-12 m-auto border rounded-full bg-[#e1999f] text-white"
+                onClick={() => setStep(2)}
+              >
+                Measurement
+              </button>
+            )}
+            {step === 2 && (
+              <button
+                className="w-[50%] h-12 m-auto border rounded-full bg-[#e1999f] text-white"
+                onClick={() => setStep(3)}
+              >
+                Style
+              </button>
+            )}
+            {step === 3 && (
+              <button
+                className="w-[50%] h-12 m-auto border rounded-full bg-[#e1999f] text-white"
+                onClick={() => setStep(4)}
+              >
+                Features
+              </button>
+            )}
+
+{step === 4 && (
+              <button className="w-[50%] h-12 m-auto border rounded-full bg-[#e1999f] text-white" >
+                Estimate
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+
+
+
+
+
+
+
