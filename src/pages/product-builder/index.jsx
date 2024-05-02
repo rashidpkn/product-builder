@@ -7,9 +7,10 @@ import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
 import Step4 from "./Step4";
+import Estimate from "./Estimate";
 
 export default function ProductBuilder() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(5);
   const style = new URLSearchParams(window.location.search).get('style')?.trim()?.toLowerCase()
 
   const {hangingStyle,type} = useSelector(state=>state.fabric)
@@ -23,14 +24,16 @@ if(['double','eyelet','pencil','goblet','triple'].includes(style))  {
 
 
   return (
-    <main className="h-[calc(100vh-132.28px)] relative" style={{background:fabrics.find(e=>e.fabric === type).color}}>
+    <main className="h-[calc(100vh-132.28px)] relative">
       <img
-        src="https://curtainandblindco.com.au/wp-content/uploads/2021/10/809501-Odin-Porcelain-Front-1680x920-1.jpg"
+        src={fabrics.find(e=>e.fabric === type).img}
         className="absolute w-full h-full object-cover"
         alt=""
       />
 
-      
+{step === 5 && <Estimate setStep={setStep} />}
+
+
 
       <div className="absolute inset-y-0 my-auto max-h-[44rem] h-full w-[30rem] bg-white right-48 rounded-lg p-8">
         <div className="flex justify-between items-center">
@@ -58,6 +61,13 @@ if(['double','eyelet','pencil','goblet','triple'].includes(style))  {
           className="absolute bottom-0 left-0 w-full h-36 bg-white"
           style={{ boxShadow: "0 -1px 0 rgba(0, 0, 0, .03)" }}
         >
+<div className=" absolute flex justify-center items-center w-full -top-4 ">
+
+{step !== 1 && <button onClick={()=>step !==1 && setStep(step -1)} className="p-3 rounded-full border bg-white animated-button" >
+            <Icon icon={'ooui:previous-ltr'} className="text-black text-2xl" />
+          </button>}
+</div>
+
           <div
             className="w-full h-2 border-b"
             style={{
@@ -92,7 +102,7 @@ if(['double','eyelet','pencil','goblet','triple'].includes(style))  {
             )}
 
 {step === 4 && (
-              <button className="w-[50%] h-12 m-auto border rounded-full bg-[#e1999f] text-white" >
+              <button className="w-[50%] h-12 m-auto border rounded-full bg-[#e1999f] text-white" onClick={() => setStep(5)}>
                 Estimate
               </button>
             )}

@@ -4,7 +4,7 @@ import { setFabric } from "../../redux/slice/fabric";
 const Step2 = () => {
 
     const dispatch = useDispatch()
-    const {coverType,windowType,roomeName,liveInDubai,height,width} = useSelector(state=>state.fabric)
+    const {coverType,windowType,roomName,liveInDubai,height,width} = useSelector(state=>state.fabric)
 
   return (
     <>
@@ -92,14 +92,14 @@ const Step2 = () => {
       <div className="grid grid-cols-1 gap-3  px-10">
         {["Bedroom", "Study", "Bathroom", "Balcony", "Living Room", "Dining Room", "Kitchen"].map((room, index) => (
       <button key={index} 
-      className={`w-full h-14 ${roomeName===room ? 'border-4' : 'border'}  rounded`}
-      onClick={()=>{dispatch(setFabric({key:'roomeName',value:room}))}}
+      className={`w-full h-14 ${roomName===room ? 'border-4' : 'border'}  rounded`}
+      onClick={()=>{dispatch(setFabric({key:'roomName',value:room}))}}
       >{room}</button>
     ))}
 
         <input type="text" className="w-full h-14 border rounded px-3" placeholder="Other"  
-        onChange={e=>{dispatch(setFabric({key:'roomeName',value:e.target.value}))}}
-        value={roomeName}
+        onChange={e=>{dispatch(setFabric({key:'roomName',value:e.target.value}))}}
+        value={roomName}
         />
       </div>
 

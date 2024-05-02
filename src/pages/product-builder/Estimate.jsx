@@ -1,36 +1,85 @@
-import React from 'react'
+import React, { useCallback } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { setCustomer } from '../../redux/slice/customer'
+import { Icon } from '@iconify/react/dist/iconify.js'
 
-export default function Estimate() {
+export default function Estimate({setStep}) {
+
+    const {type,coverType,windowType,roomName,height,width,lining,installationMethod,liveInDubai,panelType,hangingStyle} = useSelector(state=>state.fabric)
+const { fName, lName, email, mobileNumber, addressLine1, addressLine2, addressLine3, city, country, postCode} = useSelector(state=>state.customer)
+const dispatch = useDispatch()
+
+const placeOrder = useCallback(
+  async (e) => {
+    e.preventDefault()
+  },
+  [],
+)
+
+
+
   return (
-    <div className="">
+    <div className="h-full w-full absolute top-0 left-0 flex justify-center items-center z-40 backdrop-blur-[24px]">
 
     
-    <div className="bg-[#5C8984]/70 rounded-2xl backdrop-blur-[24px] p-10 flex lg:gap-[100px] justify-center text-white flex-wrap">
-      <div className="w-[370px]">
+    <div className="bg-[#e1999f]/70 rounded-2xl backdrop-blur-[24px] p-10 grid grid-cols-2 lg:gap-x-12 gap-5 justify-center text-white flex-wrap  w-[800px]">
+        
+        <div className="col-span-2 flex justify-between items-center">
+            <div className=""></div>
+            <h1 className='text-center text-2xl'>Order Details</h1>
+            <div className="" onClick={()=>setStep(prev=>prev-1)}>
+                <Icon  icon={'material-symbols-light:close'} className='h-8 w-8 cursor-pointer hover:rotate-90 duration-500' />
+            </div>
+        </div>
+
+      <div className="">
         <p className="text-base font-bold font-inter text-center">Estimate</p>
         <div className="flex justify-between mt-6">
           <p>Fabric</p>
-          <p>Acanthium Autumn</p>
+          <p className='capitalize'>{type}</p>
         </div>
         <div className="flex justify-between mt-3">
           <p>Item</p>
-          <p>Blind</p>
+          <p className='capitalize'>{coverType}</p>
         </div>
         <div className="flex justify-between mt-3">
           <p>Installation</p>
-          <p>Outside</p>
+          <p className='capitalize'>{windowType}</p>
         </div>
+
         <div className="flex justify-between mt-3">
-          <p>Pole</p>
-          <p>No</p>
+          <p>Live in Dubai</p>
+          <p className='capitalize'>{liveInDubai ? 'Yes' : 'No'}</p>
         </div>
+        
         <div className="flex justify-between mt-3">
-          <p>Measurements</p>
-          <p> W  H (Bedroom)</p>
+          <p>Measurements (H x W)</p>
+          <p> {height} cm x {width} cm </p>
         </div>
+
+        <div className="flex justify-between mt-3">
+          <p>Room Name</p>
+          <p> {roomName}</p>
+        </div>
+
+        <div className="flex justify-between mt-3">
+          <p>Panel type</p>
+          <p className='capitalize'>{panelType}</p>
+        </div>
+
+        <div className="flex justify-between mt-3">
+          <p>Hanging style</p>
+          <p className='capitalize'>{hangingStyle}</p>
+        </div>
+
         <div className="flex justify-between mt-3">
           <p>Lining</p>
-          <p>Unlined</p>
+          <p className='capitalize'>{lining}</p>
+        </div>
+        <div className="flex justify-between mt-3">
+          <p>Track or Pole</p>
+          {installationMethod === 'none' && <p>No</p>}
+          {installationMethod !== 'none' && <p className='capitalize'>Yes ({installationMethod})</p>}
         </div>
         <div className="w-full h-[2px] border-dashed border mt-6"></div>
         <div className="flex justify-between mt-6">
@@ -38,73 +87,36 @@ export default function Estimate() {
           <p>AED 100</p>
         </div>
         <div className="flex justify-between mt-3">
-          <p>Accessories</p>
-          <p>AED 0</p>
-        </div>
-        <div className="flex justify-between mt-3">
           <p>Boxed & Postage</p>
           <p>AED 50</p>
         </div>
-        <div className="flex justify-between mt-3">
-          <p>Installation</p>
-          <p>AED  0 </p>
-        </div>
+  
         <div className="w-full h-[2px] border-dashed border mt-6"></div>
         <div className="flex justify-between mt-3">
           <p>Total Price</p>
           <p className="font-medium">AED 150</p>
         </div>
-        <a href="/login">
-          <p className="mt-6">
-            <svg
-              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
-              focusable="false"
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              data-testid="BookmarkBorderOutlinedIcon"
-            >
-              <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2m0 15-5-2.18L7 18V5h10z"></path>
-            </svg>{' '}
-            Save for later
-          </p>
-        </a>
+        
       </div>
-      <form className="w-[370px]">
-        <p className="text-base font-bold font-inter text-center">Payment</p>
-        <div className="flex  justify-between mt-6">
-          <div className="flex flex-col">
-            <label htmlFor="fName">First Name</label>
-            <input type="text" id="fName" className="w-44 h-8 rounded outline-none bg-white text-black pl-2" required="" placeholder="George" />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="lName">Last Name</label>
-            <input type="text" id="lName" className="w-36 h-8 rounded outline-none bg-white text-black pl-2" required="" placeholder="Wilson" />
-          </div>
+      <form className=" text-sm" onSubmit={placeOrder}>
+        <p className="text-base font-bold font-inter text-center">Customer Details</p>
+        <div className="grid grid-cols-2 gap-3 gap-y-10 mt-6">
+            <input type="text" className='bg-transparent border-b outline-none placeholder:text-white/80' value={fName} onChange={e=>dispatch(setCustomer({key:'fName',value:e.target.value}))} placeholder='First Name' required/>
+            <input type="text" className='bg-transparent border-b outline-none placeholder:text-white/80' value={lName} onChange={e=>dispatch(setCustomer({key:'lName',value:e.target.value}))} placeholder='Last Name' required/>
+            <input type="email" className='bg-transparent border-b outline-none placeholder:text-white/80' value={email} onChange={e=>dispatch(setCustomer({key:'email',value:e.target.value}))} placeholder='E-mail' required/>
+            <input type="tel" className='bg-transparent border-b outline-none placeholder:text-white/80' value={mobileNumber} onChange={e=>dispatch(setCustomer({key:'mobileNumber',value:e.target.value}))} placeholder='Mobile Number' required/>
+            <input type="text" className='bg-transparent border-b outline-none placeholder:text-white/80 col-span-2' value={addressLine1} onChange={e=>dispatch(setCustomer({key:'addressLine1',value:e.target.value}))} placeholder='Address Line1' required/>
+            <input type="text" className='bg-transparent border-b outline-none placeholder:text-white/80 col-span-2' value={addressLine2} onChange={e=>dispatch(setCustomer({key:'addressLine2',value:e.target.value}))} placeholder='Address Line2' required/>
+            <input type="text" className='bg-transparent border-b outline-none placeholder:text-white/80 col-span-2' value={addressLine3} onChange={e=>dispatch(setCustomer({key:'addressLine3',value:e.target.value}))} placeholder='Address Line3 (optinal)'/>
+            <input type="text" className='bg-transparent border-b outline-none placeholder:text-white/80' value={city} onChange={e=>dispatch(setCustomer({key:'city',value:e.target.value}))} placeholder='City' required/>
+            <input type="text" className='bg-transparent border-b outline-none placeholder:text-white/80' value={country} onChange={e=>dispatch(setCustomer({key:'country',value:e.target.value}))} placeholder='Country' required/>
+            <input type="text" className='bg-transparent border-b outline-none placeholder:text-white/80' value={postCode} onChange={e=>dispatch(setCustomer({key:'postCode',value:e.target.value}))} placeholder='Post Code' required/>
+
         </div>
-        <div className="flex w-[370px] justify-between mt-6">
-          <div className="">
-            <label htmlFor="phone">Phone Number</label>
-            <div className="flex gap-1">
-              <input type="text" className="w-12 h-8 outline-none rounded bg-white text-black text-center" required="" value="+44" />
-              <input type="tel" className="w-32 h-8 outline-none rounded bg-white text-black pl-2" required="" />
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="">Post Code</label>
-            <input type="text" className="w-36 h-8 outline-none rounded bg-white text-black pl-2" required="" placeholder="E1 7AA" />
-          </div>
+        <div className="flex justify-center items-center mt-10">
+            <button className='border rounded-2xl px-4 py-3 hover:rounded-lg text-xl duration-200'>Place Order</button>
         </div>
-        <div className="mt-6">
-          <label htmlFor="address">Address</label>
-          <textarea name="" id="address" cols="30" rows="10" className="w-full h-[87px] outline-none rounded bg-white text-black p-2" required=""></textarea>
-        </div>
-        <div className="mt-6">
-          <label htmlFor="address">Email</label>
-          <input type="email" className="w-full h-8 outline-none rounded bg-white text-black p-2" required="" value="" />
-        </div>
-        <div className="flex justify-center w-full items-center mt-6">
-          <button className="px-4 py-1 rounded-lg bg-white text-[#5C8984] flex justify-center items-center hover:shadow-2xl duration-200 hover:scale-110">Continue to Pay</button>
-        </div>
+       
       </form>
     </div>
     </div>

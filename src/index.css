@@ -6,3 +6,18 @@
     font-family: Recoleta;
     src: url("/font/Recoleta-Regular.otf") format("opentype");
 }
+
+
+.animated-button {
+    animation: upDownAnimation 1s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  @keyframes upDownAnimation {
+    0% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(5px); /* Adjust the distance you want it to move */
+    }
+  }
+  
