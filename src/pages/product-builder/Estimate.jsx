@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react/dist/iconify.js'
 
 export default function Estimate({setStep}) {
 
-    const {type,coverType,windowType,roomName,height,width,lining,installationMethod,liveInDubai,panelType,hangingStyle,installationItem} = useSelector(state=>state.fabric)
+    const {type,coverType,windowType,roomName,height,width,lining,installationMethod,liveInDubai,panelType,hangingStyle,installationItem,price} = useSelector(state=>state.fabric)
 const { fName, lName, email, mobileNumber, addressLine1, addressLine2, addressLine3, city, country, postCode} = useSelector(state=>state.customer)
 const dispatch = useDispatch()
 
@@ -92,18 +92,18 @@ const placeOrder = useCallback(
 
         <div className="w-full h-[2px] border-dashed border mt-6"></div>
         <div className="flex justify-between mt-6">
-          <p>Making Price</p>
-          <p>AED 100</p>
+          <p>Making Price </p>
+          <p>AED {price.toFixed(2)}</p>
         </div>
         <div className="flex justify-between mt-3">
           <p>Boxed & Postage</p>
-          <p>AED 50</p>
+          <p>AED 50.00</p>
         </div>
   
         <div className="w-full h-[2px] border-dashed border mt-6"></div>
         <div className="flex justify-between mt-3">
           <p>Total Price</p>
-          <p className="font-medium">AED 150</p>
+          <p className="font-medium">AED {(price + 50).toFixed(2)}</p>
         </div>
         
       </div>

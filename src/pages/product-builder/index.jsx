@@ -10,6 +10,7 @@ import Step4 from "./Step4";
 import Estimate from "./Estimate";
 
 export default function ProductBuilder() {
+
   const style = new URLSearchParams(window.location.search).get('style')?.trim()?.toLowerCase()
   const h = new URLSearchParams(window.location.search).get('h')?.trim()
   const w = new URLSearchParams(window.location.search).get('w')?.trim()
@@ -33,7 +34,7 @@ export default function ProductBuilder() {
   }, [step])
   
 
-  const {hangingStyle,type} = useSelector(state=>state.fabric)
+  const {hangingStyle,type,price} = useSelector(state=>state.fabric)
 const dispatch = useDispatch()
 useEffect(() => {
 if(['double','eyelet','pencil','goblet','triple'].includes(style))  {
@@ -66,12 +67,13 @@ if(parseInt(h) > 100){
       <div className="absolute inset-y-0 my-auto max-h-[44rem] h-full w-[30rem] bg-white right-48 rounded-lg p-8">
         <div className="flex justify-between items-center">
           <div className="">
-            <h1 className="font-[Recoleta] text-4xl font-[1000] capitalize">{hangingStyle}</h1>
+            <h1 className="font-[Recoleta] text-4xl font-[1000] capitalize">{hangingStyle} </h1>
+            <p className="text-lg font-medium">AED {price.toFixed(2)}</p>
             {step === 1 && <p className="text-lg">Fabric</p>}
             {step === 2 && <p className="text-lg">Measurement</p>}
             {step === 3 && <p className="text-lg">Style</p>}
             {step === 4 && <p className="text-lg">Features</p>}
-            
+
           </div>
           {step !==1 && <button onClick={()=>step !==1 && setStep(step -1)} className="p-3 rounded-full border">
             <Icon icon={'ooui:previous-ltr'} className="text-black text-2xl" />
