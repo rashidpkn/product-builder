@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFabric } from "../../redux/slice/fabric";
 import { Icon } from "@iconify/react/dist/iconify.js";
@@ -10,8 +10,26 @@ import Step4 from "./Step4";
 import Estimate from "./Estimate";
 
 export default function ProductBuilder() {
-  const [step, setStep] = useState(1);
   const style = new URLSearchParams(window.location.search).get('style')?.trim()?.toLowerCase()
+  
+  const [step, setStep] = useState(1);
+  const menu = useRef(null)
+  const subMenu = useRef(null)
+
+  const [enableScrollDown, setEnableScrollDown] = useState(false)
+
+  useEffect(() => {
+    if (menu.current) {
+      menu.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    
+    if(subMenu.current.offsetHeight > 400){
+      setEnableScrollDown(true)
+    }else{
+      setEnableScrollDown(false)
+    }
+  }, [step])
+  
 
   const {hangingStyle,type} = useSelector(state=>state.fabric)
 const dispatch = useDispatch()
@@ -50,11 +68,13 @@ if(['double','eyelet','pencil','goblet','triple'].includes(style))  {
           </button>}
         </div>
         <hr className="my-8" />
-        <div className=" overflow-y-auto overflow-x-hidden h-[400px]">
+        <div className=" overflow-y-auto overflow-x-hidden h-[400px]" ref={menu}>
+          <div className="overflow-auto" ref={subMenu}>
           {step === 1 && <Step1 />}
           {step === 2 && <Step2 />}
           {step === 3 && <Step3 />}
           {step === 4 && <Step4 />}
+          </div>
         </div>
 
         <div
@@ -63,8 +83,8 @@ if(['double','eyelet','pencil','goblet','triple'].includes(style))  {
         >
 <div className=" absolute flex justify-center items-center w-full -top-4 ">
 
-{step !== 1 && <button onClick={()=>step !==1 && setStep(step -1)} className="p-3 rounded-full border bg-white animated-button" >
-            <Icon icon={'ooui:previous-ltr'} className="text-black text-2xl" />
+{enableScrollDown && <button onClick={()=>menu.current.scrollTo({ top: menu.current.scrollTop +100, behavior: "smooth" })} className="p-3 rounded-full border bg-white animated-button" >
+            <Icon icon={'ooui:previous-ltr'} className="text-black text-2xl -rotate-90" />
           </button>}
 </div>
 
