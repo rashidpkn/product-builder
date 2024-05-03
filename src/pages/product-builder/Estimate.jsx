@@ -12,6 +12,7 @@ const dispatch = useDispatch()
 const placeOrder = useCallback(
   async (e) => {
     e.preventDefault()
+    alert("Testing")
   },
   [],
 )

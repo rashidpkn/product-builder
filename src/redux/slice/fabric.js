@@ -13,6 +13,11 @@ const initialState = {
   lining: 'unlined',
   installationMethod: 'none',
 
+
+  //need price table
+  price:100
+
+
 }
 
 const fabric = createSlice({
