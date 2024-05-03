@@ -15,7 +15,7 @@ import { fabrics } from "./fabrics";
           
           <div className="grid grid-cols-8 gap-2">
             {fabrics.map((e) => (
-              <div key={e.id} className={`h-12 w-12 rounded-full  p-[3px] border-0 ${e.fabric === type && 'border-4'}  hover:border-4 duration-200 cursor-pointer`}>
+              <div key={e.id} className={`h-12 w-12 rounded-full  p-[3px] border-0 ${e.fabric === type && 'border-4 border-[#e1999f]'}  hover:border-4 duration-200 cursor-pointer`}>
                 <button onClick={()=>dispatch(setFabric({key:'type',value:e.fabric}))} title={e.fabric} className={`w-full h-full rounded-full`} style={{backgroundImage:`url(${e.fabricPath})`}}>
                 </button>
               </div>

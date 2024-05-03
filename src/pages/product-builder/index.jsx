@@ -11,6 +11,8 @@ import Estimate from "./Estimate";
 
 export default function ProductBuilder() {
   const style = new URLSearchParams(window.location.search).get('style')?.trim()?.toLowerCase()
+  const h = new URLSearchParams(window.location.search).get('h')?.trim()
+  const w = new URLSearchParams(window.location.search).get('w')?.trim()
   
   const [step, setStep] = useState(1);
   const menu = useRef(null)
@@ -37,6 +39,9 @@ useEffect(() => {
 if(['double','eyelet','pencil','goblet','triple'].includes(style))  {
     dispatch(setFabric({key:'hangingStyle',value:style}))
 }
+
+dispatch(setFabric({key:'height',value:parseInt(h)}))
+dispatch(setFabric({key:'width',value:parseInt(w)}))
 
 }, [])
 

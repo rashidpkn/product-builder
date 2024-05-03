@@ -15,7 +15,7 @@ const Step3 = () =>{
             width={96}
             height={96}
             alt=""
-            className={`${panelType ==='single' && 'border-4'} rounded-lg cursor-pointer p-1 duration-200`}
+            className={`${panelType ==='single' && 'border-4 border-[#e1999f]'} rounded-lg cursor-pointer p-1 duration-200`}
             onClick={()=>{dispatch(setFabric({key:'panelType',value:'single'}))}}
           />
           <p>Single</p>
@@ -26,7 +26,7 @@ const Step3 = () =>{
             width={96}
             height={96}
             alt=""
-            className={`${panelType ==='pair' && 'border-4'} rounded-lg cursor-pointer p-1 duration-200`}
+            className={`${panelType ==='pair' && 'border-4 border-[#e1999f]'} rounded-lg cursor-pointer p-1 duration-200`}
             onClick={()=>{dispatch(setFabric({key:'panelType',value:'pair'}))}}
           />
           <p>Pair</p>
@@ -44,7 +44,7 @@ const Step3 = () =>{
             width={96}
             height={96}
             alt=""
-            className={`${hangingStyle ==='double' && 'border-4'} rounded-lg cursor-pointer p-1 duration-200`}
+            className={`${hangingStyle ==='double' && 'border-4 border-[#e1999f]'} rounded-lg cursor-pointer p-1 duration-200`}
             onClick={()=>{dispatch(setFabric({key:'hangingStyle',value:'double'}))}}
           />
           <p>Double</p>
@@ -56,7 +56,7 @@ const Step3 = () =>{
             width={96}
             height={96}
             alt=""
-            className={`${hangingStyle ==='eyelet' && 'border-4'} rounded-lg cursor-pointer p-1 duration-200`}
+            className={`${hangingStyle ==='eyelet' && 'border-4 border-[#e1999f]'} rounded-lg cursor-pointer p-1 duration-200`}
             onClick={()=>{dispatch(setFabric({key:'hangingStyle',value:'eyelet'}))}}
           />
           <p>Eyelet</p>
@@ -69,7 +69,7 @@ const Step3 = () =>{
             width={96}
             height={96}
             alt=""
-            className={`${hangingStyle ==='pencil' && 'border-4'} rounded-lg cursor-pointer p-1 duration-200`}
+            className={`${hangingStyle ==='pencil' && 'border-4 border-[#e1999f]'} rounded-lg cursor-pointer p-1 duration-200`}
             onClick={()=>{dispatch(setFabric({key:'hangingStyle',value:'pencil'}))}}
           />
           <p>Pencil</p>
@@ -82,7 +82,7 @@ const Step3 = () =>{
             width={96}
             height={96}
             alt=""
-            className={`${hangingStyle ==='goblet' && 'border-4'} rounded-lg cursor-pointer p-1 duration-200`}
+            className={`${hangingStyle ==='goblet' && 'border-4 border-[#e1999f]'} rounded-lg cursor-pointer p-1 duration-200`}
             onClick={()=>{dispatch(setFabric({key:'hangingStyle',value:'goblet'}))}}
           />
           <p>Goblet</p>
@@ -95,7 +95,7 @@ const Step3 = () =>{
             width={96}
             height={96}
             alt=""
-            className={`${hangingStyle ==='triple' && 'border-4'} rounded-lg cursor-pointer p-1 duration-200`}
+            className={`${hangingStyle ==='triple' && 'border-4 border-[#e1999f]'} rounded-lg cursor-pointer p-1 duration-200`}
             onClick={()=>{dispatch(setFabric({key:'hangingStyle',value:'triple'}))}}
           />
           <p>Triple</p>

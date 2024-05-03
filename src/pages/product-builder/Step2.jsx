@@ -16,7 +16,7 @@ const Step2 = () => {
             width={96}
             height={96}
             alt=""
-            className={`${coverType ==='curtain' && 'border-4'} rounded-lg cursor-pointer p-1 duration-200`}
+            className={`${coverType ==='curtain' && 'border-4 border-[#e1999f]'} rounded-lg cursor-pointer p-1 duration-200`}
             onClick={()=>{dispatch(setFabric({key:'coverType',value:'curtain'}))}}
           />
           <p>Curtain</p>
@@ -27,7 +27,7 @@ const Step2 = () => {
             width={96}
             height={96}
             alt=""
-            className={`${coverType ==='blinds' && 'border-4'} rounded-lg cursor-pointer p-1 duration-200`}
+            className={`${coverType ==='blinds' && 'border-4 border-[#e1999f]'} rounded-lg cursor-pointer p-1 duration-200`}
             onClick={()=>{dispatch(setFabric({key:'coverType',value:'blinds'}))}}
           />
           <p>Blinds</p>
@@ -44,7 +44,7 @@ const Step2 = () => {
             width={96}
             height={96}
             alt=""
-            className={`${windowType ==='flat' && 'border-4'} rounded-lg cursor-pointer p-1 duration-200`}
+            className={`${windowType ==='flat' && 'border-4 border-[#e1999f]'} rounded-lg cursor-pointer p-1 duration-200`}
             onClick={()=>{dispatch(setFabric({key:'windowType',value:'flat'}))}}
           />
           <p>Flat</p>
@@ -55,7 +55,7 @@ const Step2 = () => {
             width={96}
             height={96}
             alt=""
-            className={`${windowType ==='bay' && 'border-4'} rounded-lg cursor-pointer p-1 duration-200`}
+            className={`${windowType ==='bay' && 'border-4 border-[#e1999f]'} rounded-lg cursor-pointer p-1 duration-200`}
             onClick={()=>{dispatch(setFabric({key:'windowType',value:'bay'}))}}
           />
           <p>Bay</p>
@@ -69,7 +69,7 @@ const Step2 = () => {
             width={96}
             height={96}
             alt=""
-            className={`${windowType ==='inside' && 'border-4'} rounded-lg cursor-pointer p-1 duration-200`}
+            className={`${windowType ==='inside' && 'border-4 border-[#e1999f]'} rounded-lg cursor-pointer p-1 duration-200`}
             onClick={()=>{dispatch(setFabric({key:'windowType',value:'inside'}))}}
           />
           <p>Inside</p>
@@ -80,7 +80,7 @@ const Step2 = () => {
             width={96}
             height={96}
             alt=""
-            className={`${windowType ==='outside' && 'border-4'} rounded-lg cursor-pointer p-1 duration-200`}
+            className={`${windowType ==='outside' && 'border-4 border-[#e1999f]'} rounded-lg cursor-pointer p-1 duration-200`}
             onClick={()=>{dispatch(setFabric({key:'windowType',value:'outside'}))}}
           />
           <p>Outside</p>
@@ -92,12 +92,12 @@ const Step2 = () => {
       <div className="grid grid-cols-1 gap-3  px-10">
         {["Bedroom", "Study", "Bathroom", "Balcony", "Living Room", "Dining Room", "Kitchen"].map((room, index) => (
       <button key={index} 
-      className={`w-full h-14 ${roomName===room ? 'border-4' : 'border'}  rounded`}
+      className={`w-full h-14 ${roomName===room ? 'border-4 border-[#e1999f]' : 'border'}  rounded`}
       onClick={()=>{dispatch(setFabric({key:'roomName',value:room}))}}
       >{room}</button>
     ))}
 
-        <input type="text" className="w-full h-14 border rounded px-3" placeholder="Other"  
+        <input type="text" className="w-full h-14 border rounded px-3 outline-[#e1999f]" placeholder="Other"  
         onChange={e=>{dispatch(setFabric({key:'roomName',value:e.target.value}))}}
         value={roomName}
         />
@@ -105,15 +105,15 @@ const Step2 = () => {
 
       <p className="my-6">Do you live in Dubai? </p>
       <div className="grid grid-cols-1 gap-3  px-10">
-        <button className={`w-full h-14 ${liveInDubai ? 'border-4' : 'border'} rounded`} onClick={()=>dispatch(setFabric({key:'liveInDubai',value:true}))}>Yes</button>
-        <button className={`w-full h-14 ${liveInDubai ? 'border' : 'border-4'} rounded`} onClick={()=>dispatch(setFabric({key:'liveInDubai',value:false}))}>No</button>
+        <button className={`w-full h-14 ${liveInDubai ? 'border-4 border-[#e1999f]' : 'border'} rounded`} onClick={()=>dispatch(setFabric({key:'liveInDubai',value:true}))}>Yes</button>
+        <button className={`w-full h-14 ${liveInDubai ? 'border' : 'border-4 border-[#e1999f]'} rounded`} onClick={()=>dispatch(setFabric({key:'liveInDubai',value:false}))}>No</button>
       </div>
 
       <p className="my-6">Enter Height and Width in CM</p>
       <div className="grid grid-cols-1 gap-3  px-10">
         
-        <input type="number" onChange={e=>dispatch(setFabric({key:'height',value:parseFloat(e.target.value)}))} value={height} className="w-full h-14 border rounded px-3" placeholder="Height in CM"  />
-        <input type="number" onChange={e=>dispatch(setFabric({key:'width',value:parseFloat(e.target.value)}))} value={width} className="w-full h-14 border rounded px-3" placeholder="Width in CM"  />
+        <input type="number" onChange={e=>dispatch(setFabric({key:'height',value:parseFloat(e.target.value)}))} value={height} className="w-full h-14 border rounded px-3 outline-[#e1999f]" placeholder="Height in CM"  />
+        <input type="number" onChange={e=>dispatch(setFabric({key:'width',value:parseFloat(e.target.value)}))} value={width} className="w-full h-14 border rounded px-3 outline-[#e1999f]" placeholder="Width in CM"  />
       </div>
 
      
