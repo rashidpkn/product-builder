@@ -12,10 +12,13 @@ const initialState = {
   hangingStyle: 'double',
   lining: 'unlined',
   installationMethod: 'none',
-
+  installationItem: {
+    name: '',
+    meterial: ''
+  },
 
   //need price table
-  price:100
+  price: 100
 
 
 }

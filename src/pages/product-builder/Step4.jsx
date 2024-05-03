@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setFabric } from "../../redux/slice/fabric";
+import { PoleAndTrack } from "./PoleAndTrack";
 
 const Step4 = () =>{
 
     const dispatch = useDispatch()
-    const {lining,installationMethod} = useSelector(state=>state.fabric)
+    const {lining,installationMethod,installationItem} = useSelector(state=>state.fabric)
 
     return(
         <>
@@ -28,6 +29,32 @@ const Step4 = () =>{
         <button className={`w-full h-14 ${installationMethod === 'pole' ? 'border-4 border-[#e1999f]' : 'border'} border rounded`} onClick={()=>{dispatch(setFabric({key:'installationMethod',value:'pole'}))}}>Pole</button>
      </div>
 </>}
+
+{
+  installationMethod === 'track' &&
+  <div className="grid grid-cols-3 gap-3  px-10 mt-6">
+      {PoleAndTrack.map(e=>e.type ==='track' && <div className={`h-24 flex justify-center items-center border ${installationItem.name === e.name && installationItem.meterial === e.meterial && 'border-4 border-[#e1999f] rounded'}`} onClick={()=>{
+        dispatch(setFabric({key:'installationItem' , value:{name:e.name,meterial:e.meterial}}))
+      }}
+      title={e.name +' ' + e.meterial}
+      >
+          <img src={e.img} alt={e.name + ' ' + e.meterial}  title={e.name +' ' + e.meterial}/>
+      </div>)}
+  </div>
+}
+
+{
+  installationMethod === 'pole' &&
+  <div className="grid grid-cols-3 gap-3  px-10 mt-6">
+      {PoleAndTrack.map(e=>e.type ==='pole' && <div className={`h-24 flex justify-center items-center border ${installationItem.name === e.name && installationItem.meterial === e.meterial && 'border-4 border-[#e1999f] rounded'}`} onClick={()=>{
+        dispatch(setFabric({key:'installationItem' , value:{name:e.name,meterial:e.meterial}}))
+      }}
+      title={e.name +' ' + e.meterial}
+      >
+          <img src={e.img} alt={e.name + ' ' + e.meterial}  title={e.name +' ' + e.meterial}/>
+      </div>)}
+  </div>
+}
      
         </>
     )

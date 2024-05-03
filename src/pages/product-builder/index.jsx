@@ -79,7 +79,7 @@ if(parseInt(h) > 100){
         </div>
         <hr className="my-8" />
         <div className=" overflow-y-auto overflow-x-hidden h-[400px]" ref={menu}>
-          <div className="overflow-auto" ref={subMenu}>
+          <div className="overflow-auto pb-3" ref={subMenu}>
           {step === 1 && <Step1 />}
           {step === 2 && <Step2 />}
           {step === 3 && <Step3 />}
