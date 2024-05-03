@@ -8,9 +8,9 @@ const initialState = {
     addressLine1:'',
     addressLine2:'',
     addressLine3:'',
-    city:'London',
-    country:'United Kingdom',
-    postCode:'E1 7DS',
+    city:'Dubai',
+    country:'United Arab Emirates',
+    postCode:'25315',
 }
 
 const customer = createSlice({
