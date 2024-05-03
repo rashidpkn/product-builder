@@ -40,8 +40,13 @@ if(['double','eyelet','pencil','goblet','triple'].includes(style))  {
     dispatch(setFabric({key:'hangingStyle',value:style}))
 }
 
-dispatch(setFabric({key:'height',value:parseInt(h)}))
-dispatch(setFabric({key:'width',value:parseInt(w)}))
+if(parseInt(h) > 100){
+  dispatch(setFabric({key:'height',value:parseInt(h)}))
+
+}if(parseInt(w) > 100){
+
+  dispatch(setFabric({key:'width',value:parseInt(w)}))
+}
 
 }, [])
 
