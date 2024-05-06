@@ -39,4 +39,12 @@ export const fabrics = [
     color: "#212122",
     img:'/fabrics/pattern/img/5.webp'
   },
+  {
+    id: 6,
+    fabric: "test",
+    texture:'pattern',
+    fabricPath: "/fabrics/pattern/fabricPath/5.jpg",
+    color: "#212122",
+    img:'/fabrics/pattern/img/5.webp'
+  },
 ];
