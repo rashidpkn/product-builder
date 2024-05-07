@@ -57,6 +57,7 @@ if(parseInt(h) > 100){
       <img
         src={fabrics.find(e=>e.fabric === type).img}
         className="absolute w-full h-full object-cover"
+        loading="lazy"
         alt=""
       />
 
