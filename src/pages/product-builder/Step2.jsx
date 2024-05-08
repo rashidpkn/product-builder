@@ -89,7 +89,7 @@ const Step2 = () => {
 
 
       <p className="my-6">Room Name</p>
-      <div className="grid grid-cols-1 gap-3  px-10">
+      <div className="grid grid-cols-1 gap-3  lg:px-10">
         {["Bedroom", "Study", "Bathroom", "Balcony", "Living Room", "Dining Room", "Kitchen"].map((room, index) => (
       <button key={index} 
       className={`w-full h-14 ${roomName===room ? 'border-4 border-[#e1999f]' : 'border'}  rounded`}
@@ -104,16 +104,17 @@ const Step2 = () => {
       </div>
 
       <p className="my-6">Do you live in Dubai? </p>
-      <div className="grid grid-cols-1 gap-3  px-10">
+      <div className="grid grid-cols-1 gap-3  lg:px-10">
         <button className={`w-full h-14 ${liveInDubai ? 'border-4 border-[#e1999f]' : 'border'} rounded`} onClick={()=>dispatch(setFabric({key:'liveInDubai',value:true}))}>Yes</button>
         <button className={`w-full h-14 ${liveInDubai ? 'border' : 'border-4 border-[#e1999f]'} rounded`} onClick={()=>dispatch(setFabric({key:'liveInDubai',value:false}))}>No</button>
       </div>
 
-      <p className="my-6">Enter Height and Width in CM</p>
-      <div className="grid grid-cols-1 gap-3  px-10">
+      <p className="my-6">Enter  Width and Height in CM</p>
+      <div className="grid grid-cols-1 gap-3  lg:px-10">
         
+      <input type="number" onChange={e=>dispatch(setFabric({key:'width',value:parseFloat(e.target.value)}))} value={width} className="w-full h-14 border rounded px-3 outline-[#e1999f]" placeholder="Width in CM"  />
         <input type="number" onChange={e=>dispatch(setFabric({key:'height',value:parseFloat(e.target.value)}))} value={height} className="w-full h-14 border rounded px-3 outline-[#e1999f]" placeholder="Height in CM"  />
-        <input type="number" onChange={e=>dispatch(setFabric({key:'width',value:parseFloat(e.target.value)}))} value={width} className="w-full h-14 border rounded px-3 outline-[#e1999f]" placeholder="Width in CM"  />
+        
       </div>
 
      

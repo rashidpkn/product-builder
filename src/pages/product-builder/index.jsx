@@ -53,19 +53,19 @@ if(parseInt(h) > 100){
 
 
   return (
-    <main className="h-[calc(100vh-132.28px)] relative">
-      <img
+    <main className="h-screen lg:h-[calc(100vh-132.28px)] relative bg-cover bg-no-repeat bg-center" style={{backgroundImage:`url(${fabrics.find(e=>e.fabric === type).img})`}}>
+      {/* <img
         src={fabrics.find(e=>e.fabric === type).img}
         className="absolute w-full h-full object-cover"
-        
         alt=""
-      />
+
+      /> */}
 
 {step === 5 && <Estimate setStep={setStep} />}
 
 
 
-      <div className="absolute inset-y-0 my-auto max-h-[44rem] h-full w-[30rem] bg-white right-48 rounded-lg p-8">
+      <div className=" fixed lg:absolute bottom-0  lg:inset-y-0 lg:my-auto lg:right-48  h-[75%] lg:h-[95%] 2xl:h-[85%]  max-w-[100%]  lg:max-w-[28rem] 2xl:max-w-[33rem]  w-full bg-white  rounded-lg p-8 lg:overflow-hidden">
         <div className="flex justify-between items-center">
           <div className="">
             <h1 className="font-[Recoleta] text-4xl font-[1000] capitalize">{hangingStyle} </h1>
@@ -74,15 +74,14 @@ if(parseInt(h) > 100){
             {step === 2 && <p className="text-lg">Measurement</p>}
             {step === 3 && <p className="text-lg">Style</p>}
             {step === 4 && <p className="text-lg">Features</p>}
-
           </div>
           {step !==1 && <button onClick={()=>step !==1 && setStep(step -1)} className="p-3 rounded-full border">
             <Icon icon={'ooui:previous-ltr'} className="text-black text-2xl" />
           </button>}
         </div>
         <hr className="my-8" />
-        <div className=" overflow-y-auto overflow-x-hidden h-[400px]" ref={menu}>
-          <div className="overflow-auto pb-3" ref={subMenu}>
+        <div className="overflow-y-auto  h-[calc(100%-250px)] lg:h-[calc(100%-300px)] " ref={menu}>
+          <div className="overflow-hidden pb-3" ref={subMenu}>
           {step === 1 && <Step1 />}
           {step === 2 && <Step2 />}
           {step === 3 && <Step3 />}
@@ -91,7 +90,7 @@ if(parseInt(h) > 100){
         </div>
 
         <div
-          className="absolute bottom-0 left-0 w-full h-36 bg-white"
+          className="absolute bottom-0 left-0 w-full h-24 lg:h-36 bg-white"
           style={{ boxShadow: "0 -1px 0 rgba(0, 0, 0, .03)" }}
         >
 <div className=" absolute flex justify-center items-center w-full -top-4 ">

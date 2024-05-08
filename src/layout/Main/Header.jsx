@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <header className='flex justify-between'>
+    <header className='hidden lg:flex justify-between'>
       <div className="w-[185px] p-5">
         <img src="/img/logo/logo.svg" alt="" />
       </div>

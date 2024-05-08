@@ -27,10 +27,10 @@ import { useEffect, useState } from "react";
         </div>
           
           <div className="grid grid-cols-8 gap-2 mt-8">
-
+          
 
             {fabrics.filter(e=>e.texture === types).slice((pageNo - 1) * 24, pageNo * 24).map((e) => (
-              <div key={e.id} className={`h-12 w-12 rounded-full  p-[3px] border-0 ${e.fabric === type && 'border-4 border-[#e1999f]'}  hover:border-4 duration-200 cursor-pointer`}>
+              <div key={e.id} className={`h-10 w-10 2xl:h-12 2xl:w-12   rounded-full  p-[3px] border-0 ${e.fabric === type && 'border-4 border-[#e1999f]'}  hover:border-4 duration-200 cursor-pointer`}>
                 <button onClick={()=>dispatch(setFabric({key:'type',value:e.fabric}))} title={e.fabric} className={`w-full h-full rounded-full overflow-hidden`} >
                   <img className="h-full w-full" src={e.fabricPath} alt={e.fabric}  />
                 </button>
