@@ -53,13 +53,14 @@ if(parseInt(h) > 100){
 
 
   return (
-    <main className="h-screen lg:h-[calc(100vh-132.28px)] relative bg-cover bg-no-repeat bg-center" style={{backgroundImage:`url(${fabrics.find(e=>e.fabric === type).img})`}}>
-      {/* <img
+    <main className="h-screen lg:h-[calc(100vh-132.28px)] relative" >
+      <img
         src={fabrics.find(e=>e.fabric === type).img}
         className="absolute w-full h-full object-cover"
-        alt=""
-
-      /> */}
+        alt={fabrics.find(e=>e.fabric === type).fabric}
+      width={'100%'}
+      height={'100%'}
+      />
 
 {step === 5 && <Estimate setStep={setStep} />}
 
