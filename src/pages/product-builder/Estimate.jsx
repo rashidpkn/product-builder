@@ -23,7 +23,7 @@ const placeOrder = useCallback(
     <div className="h-full w-full absolute top-0 left-0 flex justify-center items-center z-40 backdrop-blur-[24px]">
 
     
-    <div className="bg-[#e1999f]/70 rounded-2xl backdrop-blur-[24px] p-10 grid grid-cols-2 lg:gap-x-12 gap-5 justify-center text-white flex-wrap  w-[800px]">
+    <div className="bg-[#e1999f]/70 rounded-2xl backdrop-blur-[24px] p-10 grid grid-cols-2 lg:gap-x-12 gap-5 justify-center text-white flex-wrap  max-h-[95vh] max-w-[95vw] overflow-auto">
         
         <div className="col-span-2 flex justify-between items-center">
             <div className=""></div>
@@ -33,7 +33,8 @@ const placeOrder = useCallback(
             </div>
         </div>
 
-      <div className="">
+
+      <div className="col-span-full lg:col-span-1">
         <p className="text-base font-bold font-inter text-center">Estimate</p>
         <div className="flex justify-between mt-6">
           <p>Fabric</p>
@@ -107,7 +108,7 @@ const placeOrder = useCallback(
         </div>
         
       </div>
-      <form className=" text-sm" onSubmit={placeOrder}>
+      <form className=" text-sm col-span-full lg:col-span-1" onSubmit={placeOrder}>
         <p className="text-base font-bold font-inter text-center">Customer Details</p>
         <div className="grid grid-cols-2 gap-3 gap-y-10 mt-6">
             <input type="text" className='bg-transparent border-b outline-none placeholder:text-white/80' value={fName} onChange={e=>dispatch(setCustomer({key:'fName',value:e.target.value}))} placeholder='First Name' required/>
@@ -120,10 +121,9 @@ const placeOrder = useCallback(
             <input type="text" className='bg-transparent border-b outline-none placeholder:text-white/80' value={city} onChange={e=>dispatch(setCustomer({key:'city',value:e.target.value}))} placeholder='City' required/>
             <input type="text" className='bg-transparent border-b outline-none placeholder:text-white/80' value={country} onChange={e=>dispatch(setCustomer({key:'country',value:e.target.value}))} placeholder='Country' required/>
             <input type="text" className='bg-transparent border-b outline-none placeholder:text-white/80' value={postCode} onChange={e=>dispatch(setCustomer({key:'postCode',value:e.target.value}))} placeholder='Post Code' required/>
-
         </div>
         <div className="flex justify-center items-center mt-10">
-            <button className='border rounded-2xl px-4 py-3 hover:rounded-lg text-xl duration-200'>Place Order</button>
+            <button className='border rounded-lg px-3 py-1 hover:rounded text-xl duration-200'>Place Order</button>
         </div>
        
       </form>

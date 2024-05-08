@@ -15,7 +15,7 @@ export default function ProductBuilder() {
   const h = new URLSearchParams(window.location.search).get('h')?.trim()
   const w = new URLSearchParams(window.location.search).get('w')?.trim()
   
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(5);
   const menu = useRef(null)
   const subMenu = useRef(null)
 
