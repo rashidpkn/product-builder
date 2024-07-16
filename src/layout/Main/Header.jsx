@@ -8,7 +8,7 @@ export default function Header() {
       </div>
       <div className="w-full">
         <div className="bg-[#e1999f] h-9 rounded-bl-lg flex justify-end items-center text-white gap-8 px-5 text-xs">
-          <div className="">Call us for advice <strong> 1300 301 368</strong>
+          <div className="">Call us for advice <strong> +971 54 888 1737</strong>
 </div>
           <div className="">About us</div>
           <div className="">Contact</div>

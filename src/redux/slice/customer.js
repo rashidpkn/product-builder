@@ -1,28 +1,35 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    fName:'',
-    lName:'',
-    email:'',
-    mobileNumber:'',
-    addressLine1:'',
-    addressLine2:'',
-    addressLine3:'',
-    city:'Dubai',
-    country:'United Arab Emirates',
-    postCode:'25315',
+  fName: '',
+  lName: '',
+
+  country: import.meta.env.VITE_COUNTRY || "United Arab Emirates",
+  emirate: '',
+  city: '',
+
+  type: "Home",
+
+  streetAddress: "",
+
+  apartment: "",
+
+  phone: "",
+
+  email: '',
+
 }
 
 const customer = createSlice({
   name: 'customer',
   initialState,
   reducers: {
-    setCustomer(state,{payload:{key,value}}){
-            state[key] = value
+    setCustomer(state, { payload: { key, value } }) {
+      state[key] = value
     }
   }
 });
 
-export const {setCustomer} = customer.actions
+export const { setCustomer } = customer.actions
 
 export default customer.reducer

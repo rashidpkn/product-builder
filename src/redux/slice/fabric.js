@@ -16,12 +16,8 @@ const initialState = {
     name: '',
     meterial: ''
   },
-  sqm:2,
-
-  //need price table
+  sqm: 2,
   price: 250
-
-
 }
 
 const fabric = createSlice({
@@ -31,27 +27,27 @@ const fabric = createSlice({
     setFabric(state, { payload }) {
       const { key, value } = payload
       state[key] = value
-      
-        if(state.coverType === 'curtain'){
-          state.sqm = state.height * (state.width + 50) / 10000
-        }else{
-          state.sqm = state.height * (state.width ) / 10000
-        }
-      
 
-        state.price = state.sqm *100
-      
-        if(state.hangingStyle === 'trible'){
-          state.price += 30;
+      if (state.coverType === 'curtain') {
+        state.sqm = state.height * (state.width + 50) / 10000
+      } else {
+        state.sqm = state.height * (state.width) / 10000
       }
 
-      if(state.lining === 'regular'){
+
+      state.price = state.sqm * 100
+
+      if (state.hangingStyle === 'trible') {
+        state.price += 30;
+      }
+
+      if (state.lining === 'regular') {
         state.price += state.sqm * 15;
-      }else if(state.lining === 'blackout'){
+      } else if (state.lining === 'blackout') {
         state.price += state.sqm * 25;
       }
 
-      if(state.installationMethod !== 'none'  && state.coverType === 'curtain'){
+      if (state.installationMethod !== 'none' && state.coverType === 'curtain') {
         const installationPrices = {
           'Sovereign': 117,
           'Turrent': 132,
@@ -61,8 +57,8 @@ const fabric = createSlice({
           'Swirl': 156,
           'Spire': 165,
           'Crest': 150
-      };
-      state.price += installationPrices[state.installationItem.name] || 0;
+        };
+        state.price += installationPrices[state.installationItem.name] || 0;
       }
 
     }
