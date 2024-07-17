@@ -7,6 +7,10 @@
     src: url("/font/Recoleta-Regular.otf") format("opentype");
 }
 
+*{
+  font-family: Recoleta !important;
+}
+
 
 .animated-button {
     animation: upDownAnimation 1s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
