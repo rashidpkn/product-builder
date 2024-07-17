@@ -26,7 +26,7 @@ export default function ProductBuilder() {
       menu.current.scrollTo({ top: 0, behavior: "smooth" });
     }
     
-    if(subMenu.current.offsetHeight > 400){
+    if(subMenu.current.offsetHeight > menu.current.offsetHeight){
       setEnableScrollDown(true)
     }else{
       setEnableScrollDown(false)
