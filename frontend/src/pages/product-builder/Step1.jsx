@@ -38,7 +38,6 @@ import { useEffect, useState } from "react";
             ))}
 
             <div className="col-span-full flex justify-center gap-3">
-              
                   {Array.from({length: totalPage}, (_, i) => i + 1).map(e=><button onClick={()=>setPageNo(e)} key={e} className={`rounded-full bg-[#e1999f]/30 text-white h-5 w-5 flex justify-center items-center ${pageNo === e ? 'border-[#e1999f]' : 'border-transparent'} border-[2px]    p-3 `}>{e}</button>)}
             </div>
 
@@ -52,7 +51,9 @@ import { useEffect, useState } from "react";
           <div className="flex justify-between items-center p-10 text-center text-xs">
             <div className="flex flex-col justify-center items-center gap-5">
               <img src="/img/product-builder/icon1.svg" alt="" />
+
               <p>Softly filters daylight</p>
+
             </div>
             <div className="flex flex-col justify-center items-center gap-5">
               <img src="/img/product-builder/icon2.svg" alt="" />
