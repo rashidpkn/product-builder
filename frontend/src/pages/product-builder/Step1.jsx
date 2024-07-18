@@ -60,7 +60,7 @@ import { useEffect, useState } from "react";
             </div>
             <div className="flex flex-col justify-center items-center gap-5">
               <img src="/img/product-builder/icon3.svg" alt="" />
-              <p>Delivered in 4 weeks</p>
+              <p>Delivered in 3 days</p>
             </div>
           </div>
         </>
