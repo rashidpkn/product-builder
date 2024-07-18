@@ -52,16 +52,16 @@ import { useEffect, useState } from "react";
             <div className="flex flex-col justify-center items-center gap-5">
               <img src="/img/product-builder/icon1.svg" alt="" />
 
-              <p>Softly filters daylight</p>
+              <p>Softly Filters Daylight</p>
 
             </div>
             <div className="flex flex-col justify-center items-center gap-5">
               <img src="/img/product-builder/icon2.svg" alt="" />
-              <p>Neutral colour palette</p>
+              <p>Neutral Colour Palette</p>
             </div>
             <div className="flex flex-col justify-center items-center gap-5">
               <img src="/img/product-builder/icon3.svg" alt="" />
-              <p>Delivered in 3 days</p>
+              <p>Delivered in 3 Days</p>
             </div>
           </div>
         </>
