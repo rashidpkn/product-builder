@@ -8,9 +8,12 @@
 }
 
 *{
-  font-family: Recoleta !important;
+  font-family: Recoleta Georgia, 'Times New Roman', Times, serif;
 }
 
+/* .free-consultation{
+  font-family: sans-serif !important;
+} */
 
 .animated-button {
     animation: upDownAnimation 1s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
