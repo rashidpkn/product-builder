@@ -132,7 +132,7 @@ const orderPlaced = (customer:customerType,fabric:fabricType)=>{
         </tr>
         <tr class="footer" style="background-color: #e1999f; text-align: center; padding: 30px 0px; color: white; margin-top: 20px;">
             <td>
-                <p>&copy; 2024 My Thread. All Rights Reserved.</p>
+                <p>&copy; 2024 Thread Blinds & Curtains. All Rights Reserved.</p>
             </td>
         </tr>
     </table>

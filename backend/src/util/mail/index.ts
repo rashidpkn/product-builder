@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
       
       const mailOptions = {
         from: {
-          name: 'My Thread',
+          name: 'Thread Blinds & Curtains',
           address: 'info@my-thread.com'
         },
         to, subject, html,
