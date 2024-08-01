@@ -56,7 +56,7 @@ if(parseInt(h) > 100){
     <main className="h-screen lg:h-[calc(100vh-132.28px)] relative" >
       <img
         src={fabrics.find(e=>e.fabric === type).img}
-        className="absolute w-full h-full object-cover"
+        className="absolute w-full h-auto  lg:h-full object-cover"
         alt={fabrics.find(e=>e.fabric === type).fabric}
       width={'100%'}
       height={'100%'}
@@ -66,7 +66,7 @@ if(parseInt(h) > 100){
 
 
 
-      <div className=" fixed lg:absolute bottom-0  lg:inset-y-0 lg:my-auto lg:right-48  h-[75%] lg:h-[95%] 2xl:h-[85%]  max-w-[100%]  lg:max-w-[28rem] 2xl:max-w-[33rem]  w-full bg-white  rounded-lg p-8 lg:overflow-hidden">
+      <div className=" fixed lg:absolute bottom-0  lg:inset-y-0 lg:my-auto lg:right-48  h-[50%] lg:h-[95%] 2xl:h-[85%]  max-w-[100%]  lg:max-w-[28rem] 2xl:max-w-[33rem]  w-full bg-white  rounded-lg p-8 lg:overflow-hidden">
         <div className="flex justify-between items-center">
           <div className="">
             <h1 className="font-[Recoleta] text-4xl font-[1000] capitalize">{hangingStyle} </h1>
