@@ -213,7 +213,7 @@ export default function Header() {
               </li>
 
               <li className='hover:text-[#fec500] h-full flex justify-center items-center'><a href="https://my-thread.com/our-works">Our Works </a></li>
-              <li className='hover:text-[#fec500] h-full flex justify-center items-center group overflow-hidden'><a href="https://my-thread.com/Commercial/">Commercial </a><Icon onClick={() => settopArrow(_ => !_)} className={`${topArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} />
+              <li className='hover:text-[#fec500] h-full flex justify-center items-center group overflow-hidden'><a href="#">Commercial </a><Icon onClick={() => settopArrow(_ => !_)} className={`${topArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} />
                 <div className="absolute overflow-hidden w-full top-[125px] left-0 h-0 bg-[#e1999f] duration-200 group-hover:h-screen group-hover:overflow-y-auto">
                   <div className="p-8 gap-5 grid grid-cols-4 ">
                     <Link to={'https://my-thread.com/Office-blinds-Curtains/'}>
@@ -350,7 +350,7 @@ export default function Header() {
         </div>
 
         <div className="flex justify-between px-5 items-center lg:hidden z-50 ">
-          <img className='w-[120px]' src="/img/logo/logo.svg" alt="" />
+          <Link to={'https://my-thread.com/'}><img className='w-[120px]' src="/img/logo/logo.svg" alt="" /></Link>
           <div className="flex justify-center items-center gap-5 text-base">
             <a href="tel:+97154888737" className='text-[#243029] font-medium'>+971 54 888 1737</a>
             <img src="/icons/cart.png" alt="cart icon" />
@@ -377,7 +377,7 @@ export default function Header() {
               <Link to={'https://my-thread.com/colours/'}><li>Our Colours</li></Link>
             </ul>}
           <li className='hover:text-[#fec500] text-xl '><a href="https://my-thread.com/our-works">Our Works </a></li>
-          <li className='hover:text-[#fec500] text-xl flex  items-center group overflow-hidden'><a href="https://my-thread.com/Commercial/">Commercial </a><Icon onClick={() => settopArrow(_ => !_)} className={`${topArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} /></li>
+          <li className='hover:text-[#fec500] text-xl flex  items-center group overflow-hidden'><a href="#">Commercial </a><Icon onClick={() => settopArrow(_ => !_)} className={`${topArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} /></li>
           {topArrow &&<ul className='px-5 py-1 leading-8'>
               <Link to={'https://my-thread.com/Office-blinds-Curtains/'}><li>Office Blinds & Curtains</li></Link>
               <Link to={'https://my-thread.com/Hospital-Blinds-Curtains/'}><li>Hospital Blinds & Curtains</li></Link>
@@ -455,9 +455,10 @@ export default function Header() {
               Blinds</h5>
             </div>
           </Link>
-          <div className="text-xl flex">
+          <div className="text-2xl flex items-center gap-7 fixed w-full bottom-0 bg-white  p-3">
           <Link to={'https://my-thread.com/blinds/'}><button>Shop all Blinds</button></Link>
-          <Icon className='text-xl text-green-900' to={'eva:arrow-forward-fill'} />
+          <Icon className='text-2xl text-green-900 ' icon={'eva:arrow-forward-outline'} />
+         
           </div>
          
         </div>}
@@ -543,9 +544,9 @@ export default function Header() {
               Children Curtains</h5>
             </div>
           </Link>
-          <div className="text-xl flex">
-          <Link to={'https://my-thread.com/blinds/'}><button>Shop all Blinds</button></Link>
-          <Icon className='text-xl text-green-900' to={'eva:arrow-forward-fill'} />
+          <div className="text-2xl flex items-center gap-2 fixed w-full bottom-0 bg-white  p-3">
+          <Link to={'https://my-thread.com/curtains/'}><button>Shop all Curtains</button></Link>
+          <Icon className='text-2xl text-green-900' icon={'eva:arrow-forward-fill'} />
           </div>
           </div>}
       </>
