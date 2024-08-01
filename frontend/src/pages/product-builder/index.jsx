@@ -80,7 +80,7 @@ if(parseInt(h) > 100){
             <Icon icon={'ooui:previous-ltr'} className="text-black text-2xl" />
           </button>}
         </div>
-        <hr className="my-3 lg:my-8" />
+        <hr className="my-1 lg:my-8" />
         <div className="overflow-y-auto  h-full lg:h-[calc(100%-300px)] " ref={menu}>
           <div className="overflow-hidden pb-3" ref={subMenu}>
           {step === 1 && <Step1 />}
