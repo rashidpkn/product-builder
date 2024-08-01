@@ -14,7 +14,7 @@ export default function Header() {
 
 
   useEffect(() => {
-  if(menu){
+  if(menu || mega || mega2){
     document.body.style.overflow = "hidden"
   }  else{
     document.body.style.overflow = ""
@@ -23,7 +23,7 @@ export default function Header() {
     document.body.style.overflow = ""
   }
   
-  }, [menu])
+  }, [menu,mega,mega2])
   
   return (
     <>
@@ -397,7 +397,10 @@ export default function Header() {
           <h1 className='' onClick={() => { setMega(prev => !prev);setmega2(false) }}>Blinds</h1>
           <h1 onClick={() => { setmega2(prev => !prev);setMega(false) }}>Curtains</h1>
         </div>
-        {mega && <div className=" w-full bg-white  z-50 relative grid grid-cols-2 p-5">
+        {mega && <div className="w-full bg-white  z-50 fixed top-[11.4rem] left-0 h-[calc(100vh-184px)] overflow-y-scroll grid grid-cols-2 p-5">
+
+
+          
           <Link to={'https://my-thread.com/blinds/blinds-roller/'}>
             <div className="">
               <img src="/nav-image/blinds/1.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
@@ -456,8 +459,9 @@ export default function Header() {
           <Link to={'https://my-thread.com/blinds/'}><button>Shop all Blinds</button></Link>
           <Icon className='text-xl text-green-900' to={'eva:arrow-forward-fill'} />
           </div>
+         
         </div>}
-        {mega2 && <div className="h-auto w-full bg-white  z-50 relative grid grid-cols-2 p-5">
+        {mega2 && <div className="w-full bg-white  z-50 fixed top-[11.4rem] left-0 h-[calc(100vh-184px)] overflow-y-scroll grid grid-cols-2 p-5">
           <Link to={'https://my-thread.com/curtains/pencil-curtains/'}>
             <div className="">
               <img src="/nav-image/curtains/1.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
