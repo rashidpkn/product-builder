@@ -56,7 +56,7 @@ export default function Header() {
             <ul className='flex gap-28 text-lg text-[#243029] font-[500] h-full'>
 
               <li className=' h-full flex justify-center gap-1 items-center group overflow-hidden'><a className='hover:text-[#fec500]' href="https://my-thread.com/curtains">Shop </a><Icon onClick={() => setShopArrow(_ => !_)} className={`${shopArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} />
-                <div className="absolute overflow-hidden w-full top-[125px] left-0 h-0 bg-[#e1999f] duration-200 group-hover:h-[48rem] group-hover:overflow-y-auto">
+                <div className="absolute overflow-hidden w-full top-[125px] left-0 h-0 bg-[#e1999f] duration-200 group-hover:h-screen group-hover:overflow-y-auto">
                   <div className="p-8 gap-5 grid grid-cols-4 py-16 ">
                     <Link to={'https://my-thread.com/curtains/'}>
                       <div className="min-h-[360px] h-[360px] w-full relative card">
@@ -214,7 +214,7 @@ export default function Header() {
 
               <li className='hover:text-[#fec500] h-full flex justify-center items-center'><a href="https://my-thread.com/our-works">Our Works </a></li>
               <li className='hover:text-[#fec500] h-full flex justify-center items-center group overflow-hidden'><a href="https://my-thread.com/Commercial/">Commercial </a><Icon onClick={() => settopArrow(_ => !_)} className={`${topArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} />
-                <div className="absolute overflow-hidden w-full top-[125px] left-0 h-0 bg-[#e1999f] duration-200 group-hover:h-[48rem] group-hover:overflow-y-auto">
+                <div className="absolute overflow-hidden w-full top-[125px] left-0 h-0 bg-[#e1999f] duration-200 group-hover:h-screen group-hover:overflow-y-auto">
                   <div className="p-8 gap-5 grid grid-cols-4 ">
                     <Link to={'https://my-thread.com/Office-blinds-Curtains/'}>
                       <div className="min-h-[360px] h-full w-full relative card">
