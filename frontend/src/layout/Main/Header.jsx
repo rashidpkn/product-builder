@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react/dist/iconify.js'
 
 import './header.css'
@@ -10,6 +10,21 @@ export default function Header() {
   const [topArrow, settopArrow] = useState(false)
   const [menu, setMenu] = useState(false)
   const [mega, setMega] = useState('')
+  const [mega2, setmega2] = useState('')
+
+
+  useEffect(() => {
+  if(menu){
+    document.body.style.overflow = "hidden"
+  }  else{
+    document.body.style.overflow = ""
+  }
+  return ()=>{
+    document.body.style.overflow = ""
+  }
+  
+  }, [menu])
+  
   return (
     <>
       <header className=' lg:flex justify-between relative z-50 bg-white' >
@@ -334,23 +349,43 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="flex justify-between px-5 items-center lg:hidden z-50">
+        <div className="flex justify-between px-5 items-center lg:hidden z-50 ">
           <img className='w-[120px]' src="/img/logo/logo.svg" alt="" />
           <div className="flex justify-center items-center gap-5 text-base">
             <a href="tel:+97154888737" className='text-[#243029] font-medium'>+971 54 888 1737</a>
             <img src="/icons/cart.png" alt="cart icon" />
           </div>
-          <Icon icon={!menu ? 'pajamas:hamburger' : 'eva:close-fill'} color={menu && '#f00'} onClick={() => { setMenu(prev => !prev) }} className='text-gold text-3xl' />
+          <Icon icon={!menu ? 'pajamas:hamburger' : 'eva:close-fill'} color={menu && '#f00'} onClick={() => { setMenu(prev => !prev);setMega(false);setmega2(false) }} className='text-gold text-3xl' />
         </div>
       </header>
-      {<div className={`fixed h-screen  ${menu ? 'w-full' : 'w-0'} duration-500 bg-white top-10px  z-10 left-0 flex overflow-hidden`}>
+      {<div className={`fixed h-screen  ${menu ? 'w-full' : 'w-0'} duration-500 bg-white top-10px z-10 left-0 flex overflow-hidden scroll-none`}>
 
 
         <ul className={` duration-200 delay-500 h-screen  flex flex-col overflow-hidden bg-white px-5 py-5 space-y-5 text-black`}>
-          <li className='hover:text-[#fec500] overflow-hidden flex gap-7 items-center text-xl'><a className='hover:text-[#fec500] text-black ' href="https://my-thread.com/curtains">Shop </a><Icon onClick={() => setShopArrow(_ => !_)} className={`${shopArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} /></li>
+          <li className='hover:text-[#fec500] overflow-hidden flex gap-7 items-center text-xl'><a className='hover:text-[#fec500] text-black ' href="https://my-thread.com/curtains">Shop </a><Icon onClick={() => setShopArrow(_ => !_)} className={`${shopArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} />
+          </li>
+          {shopArrow &&<ul className='px-5 py-1 leading-8'>
+              <Link to={'https://my-thread.com/curtains/'}><li>curtains</li></Link>
+              <Link to={'https://my-thread.com/blinds/'}><li>Blinds</li></Link>
+              <Link to={'https://my-thread.com/poles%20+%20track/'}><li>Poles & Tracks</li></Link>
+              <Link to={'https://my-thread.com/Smart%20curtains/'}><li>Smart Curtains</li></Link>
+              <Link to={'https://my-thread.com/Accessories/'}><li>Accessories</li></Link>
+            </ul>}
           <li className='hover:text-[#fec500]  flex gap-7 items-center text-xl overflow-hidden'><a className='hover:text-[#fec500]' href="https://my-thread.com/fabric">Fabric </a><Icon onClick={() => setnavArrow(_ => !_)} className={`${navArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} /></li>
+          {navArrow &&<ul className='px-5 py-1 leading-8'>
+              <Link to={'https://my-thread.com/fabric/'}><li>Our Fabrics</li></Link>
+              <Link to={'https://my-thread.com/colours/'}><li>Our Colours</li></Link>
+            </ul>}
           <li className='hover:text-[#fec500] text-xl '><a href="https://my-thread.com/our-works">Our Works </a></li>
           <li className='hover:text-[#fec500] text-xl flex  items-center group overflow-hidden'><a href="https://my-thread.com/Commercial/">Commercial </a><Icon onClick={() => settopArrow(_ => !_)} className={`${topArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} /></li>
+          {topArrow &&<ul className='px-5 py-1 leading-8'>
+              <Link to={'https://my-thread.com/Office-blinds-Curtains/'}><li>Office Blinds & Curtains</li></Link>
+              <Link to={'https://my-thread.com/Hospital-Blinds-Curtains/'}><li>Hospital Blinds & Curtains</li></Link>
+              <Link to={'https://my-thread.com/hotel-blinds-curtains/'}><li>Hotel Blinds & Curtains</li></Link>
+              <Link to={'https://my-thread.com/School-Blinds-Curtains/'}><li>School Blinds & Curtains</li></Link>
+              <Link to={'https://my-thread.com/Gym%20Curtains/'}><li>Gym Curtains</li></Link>
+              <Link to={'https://my-thread.com/Government-Project/'}><li>Government Project</li></Link>
+            </ul>}
           <li className='hover:text-[#fec500] text-xl'><a href="https://my-thread.com/needhelp">Need Help </a></li>
           <li className='hover:text-[#fec500] text-xl'><a href="https://my-thread.com/free-sample">Free Sample </a></li>
         </ul>
@@ -359,13 +394,159 @@ export default function Header() {
 
       <>
         <div className="flex justify-around items-center lg:hidden text-black h-16  text-2xl font-semibold border-t-2 border-t-neutral-200">
-          <h1 className='' onClick={() => { setMega(prev => !prev) }}>blinds</h1>
-          <h1>Curtains</h1>
+          <h1 className='' onClick={() => { setMega(prev => !prev);setmega2(false) }}>blinds</h1>
+          <h1 onClick={() => { setmega2(prev => !prev);setMega(false) }}>Curtains</h1>
         </div>
-        {mega && <div className="h-screen w-full bg-black  z-50 relative"></div>}
+        {mega && <div className=" w-full bg-white  z-50 relative grid grid-cols-2 p-5">
+          <Link to={'https://my-thread.com/blinds/blinds-roller/'}>
+            <div className="">
+              <img src="/nav-image/blinds/1.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'> Roller Blinds </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/blinds/blackout-blinds/'}>
+            <div className="">
+              <img src="/nav-image/blinds/2.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>
+              Blackout Blinds </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/blinds/roman-blinds/'}>
+            <div className="">
+              <img src="/nav-image/blinds/3.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'> Roman
+              Blinds </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/blinds/motorized-blinds/'}>
+            <div className="">
+              <img src="/nav-image/blinds/4.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>
+              Motorized Blinds </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/blinds/vertical-blinds/'}>
+            <div className="">
+              <img src="/nav-image/blinds/5.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>
+              Vertical Blinds </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/blinds/duplex-blinds/'}>
+            <div className="">
+              <img src="/nav-image/blinds/6.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>Duplex
+              Blinds</h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/blinds/aluminium-blinds/'}>
+            <div className="">
+              <img src="/nav-image/blinds/7.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>Aluminium Venetian Blinds</h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/blinds/wooden-blinds/'}>
+            <div className="">
+              <img src="/nav-image/blinds/8.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>Wooden Ventian
+              Blinds</h5>
+            </div>
+          </Link>
+          <div className="text-xl flex">
+          <Link to={'https://my-thread.com/blinds/'}><button>Shop all Blinds</button></Link>
+          <Icon className='text-xl text-green-900' to={'eva:arrow-forward-fill'} />
+          </div>
+        </div>}
+        {mega2 && <div className="h-auto w-full bg-white  z-50 relative grid grid-cols-2 p-5">
+          <Link to={'https://my-thread.com/curtains/pencil-curtains/'}>
+            <div className="">
+              <img src="/nav-image/curtains/1.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>
+              pencil curtains </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/curtains/eyelet-curtains/'}>
+            <div className="">
+              <img src="/nav-image/curtains/2.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>
+              Eyelet Curtains </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/curtains/goblet-curtains/'}>
+            <div className="">
+              <img src="/nav-image/curtains/3.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>Goblet Curtains </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/curtains/double-curtains/'}>
+            <div className="">
+              <img src="/nav-image/curtains/4.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>Double Curtains </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/curtains/thriblepleat-curtains/'}>
+            <div className="">
+              <img src="/nav-image/curtains/5.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>
+              Triple Pleat Curtains </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/curtains/blackout-curtains/'}>
+            <div className="">
+              <img src="/nav-image/curtains/6.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>
+              Blockout Curtains </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/curtains/sheer-curtains/'}>
+            <div className="">
+              <img src="/nav-image/curtains/7.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>Sheer Curtains </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/curtains/hook-type-curtains/'}>
+            <div className="">
+              <img src="/nav-image/curtains/8.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>
+              Hook Type Curtains </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/curtains/ring-type-curtains/'}>
+            <div className="">
+              <img src="/nav-image/curtains/9.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>
+              Ring Type Curtains </h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/curtains/pinch-curtains/'}>
+            <div className="">
+              <img src="/nav-image/curtains/10.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>
+              Pinch Pleat Curtains</h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/curtains/curtain-wave/'}>
+            <div className="">
+              <img src="/nav-image/curtains/11.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>
+              Wave curtains</h5>
+            </div>
+          </Link>
+          <Link to={'https://my-thread.com/curtains/curtain-children/'}>
+            <div className="">
+              <img src="/nav-image/curtains/12.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
+              <h5 className='py-2 text-xl px-2'>
+              Children Curtains</h5>
+            </div>
+          </Link>
+          <div className="text-xl flex">
+          <Link to={'https://my-thread.com/blinds/'}><button>Shop all Blinds</button></Link>
+          <Icon className='text-xl text-green-900' to={'eva:arrow-forward-fill'} />
+          </div>
+          </div>}
       </>
-      
-      
+
+
 
     </>
   )
