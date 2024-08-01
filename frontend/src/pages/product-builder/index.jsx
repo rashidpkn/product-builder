@@ -66,7 +66,7 @@ if(parseInt(h) > 100){
 
 
 
-      <div className=" fixed lg:absolute bottom-0  lg:inset-y-0 lg:my-auto lg:right-48  h-[45%] lg:h-[95%] 2xl:h-[85%]  max-w-[100%]  lg:max-w-[28rem] 2xl:max-w-[33rem]  w-full bg-white  rounded-lg p-8 lg:overflow-hidden">
+      <div className=" fixed lg:absolute bottom-0  lg:inset-y-0 lg:my-auto lg:right-48  h-[45%] lg:h-[95%] 2xl:h-[85%]  max-w-[100%]  lg:max-w-[28rem] 2xl:max-w-[33rem]  w-full bg-white  rounded-lg p-5 lg:overflow-hidden">
         <div className="flex justify-between items-center">
           <div className="">
             <h1 className="font-[Recoleta] text-xl lg:text-4xl font-[1000] capitalize">{hangingStyle} </h1>
