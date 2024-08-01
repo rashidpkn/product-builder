@@ -394,7 +394,7 @@ export default function Header() {
 
       <>
         <div className="flex justify-around items-center lg:hidden text-black h-16  text-2xl font-semibold border-t-2 border-t-neutral-200">
-          <h1 className='' onClick={() => { setMega(prev => !prev);setmega2(false) }}>blinds</h1>
+          <h1 className='' onClick={() => { setMega(prev => !prev);setmega2(false) }}>Blinds</h1>
           <h1 onClick={() => { setmega2(prev => !prev);setMega(false) }}>Curtains</h1>
         </div>
         {mega && <div className=" w-full bg-white  z-50 relative grid grid-cols-2 p-5">
