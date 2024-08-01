@@ -59,7 +59,7 @@ export default function Header() {
                 <div className="absolute overflow-hidden w-full top-[125px] left-0 h-0 bg-[#e1999f] duration-200 group-hover:h-screen group-hover:overflow-y-auto">
                   <div className="p-8 gap-5 grid grid-cols-4 py-16 ">
                     <Link to={'https://my-thread.com/curtains/'}>
-                      <div className="min-h-[360px] h-[360px] w-full relative card">
+                      <div className="min-h-[360px] h-full w-full relative card">
                         <div className="absolute right-[15rem] bottom-6 text-xl text-white">
                           <h6 className='font-semibold'>Curtains</h6>
                         </div>
@@ -78,7 +78,7 @@ export default function Header() {
                       </div>
                     </Link>
                     <Link to={'https://my-thread.com/blinds/'}>
-                      <div className="min-h-[360px] h-[360px] w-full relative card">
+                      <div className="min-h-[360px] h-full w-full relative card">
                         <div className="absolute right-[15rem] bottom-6 text-xl text-white">
                           <h6 className='font-semibold'>
                             Blinds</h6>
@@ -98,7 +98,7 @@ export default function Header() {
                       </div>
                     </Link>
                     <Link to={'https://my-thread.com/poles%20+%20track/'}>
-                      <div className="min-h-[360px] h-[360px] w-full relative card">
+                      <div className="min-h-[360px] h-full w-full relative card">
                         <div className="absolute w-full left-[2rem] bottom-6 text-xl text-white">
                           <h6 className='font-semibold'>
                             Poles & Tracks</h6>
@@ -118,7 +118,7 @@ export default function Header() {
                       </div>
                     </Link>
                     <Link to={'https://my-thread.com/Smart%20curtains/'}>
-                      <div className="min-h-[360px] h-[360px] w-full relative card">
+                      <div className="min-h-[360px] h-full w-full relative card">
                         <div className="absolute left-[2rem] w-full bottom-6 text-xl text-white">
                           <h6 className='font-semibold'>
                             Smart Curtains</h6>
@@ -138,7 +138,7 @@ export default function Header() {
                       </div>
                     </Link>
                     <Link to={'https://my-thread.com/Accessories/'}>
-                      <div className="min-h-[360px] h-[360px] w-full relative card">
+                      <div className="min-h-[360px] h-full w-full relative card">
                         <div className="absolute right-[14rem] bottom-6 text-xl text-white">
                           <h6 className='font-semibold'>
                             Accessories</h6>
