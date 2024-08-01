@@ -60,7 +60,7 @@ export default function Header() {
                   <div className="p-8 gap-5 grid grid-cols-4 py-16 ">
                     <Link to={'https://my-thread.com/curtains/'}>
                       <div className="min-h-[360px] h-full w-full relative card">
-                        <div className="absolute right-[15rem] bottom-6 text-xl text-white">
+                        <div className="absolute left-[2rem] bottom-6  text-xl text-white">
                           <h6 className='font-semibold'>Curtains</h6>
                         </div>
                         <img src="/nav-image/curtains-1.webp" className='w-full h-full rounded-2xl' alt="" />
@@ -79,7 +79,7 @@ export default function Header() {
                     </Link>
                     <Link to={'https://my-thread.com/blinds/'}>
                       <div className="min-h-[360px] h-full w-full relative card">
-                        <div className="absolute right-[15rem] bottom-6 text-xl text-white">
+                        <div className="absolute left-[2rem] bottom-6  text-xl text-white">
                           <h6 className='font-semibold'>
                             Blinds</h6>
                         </div>
