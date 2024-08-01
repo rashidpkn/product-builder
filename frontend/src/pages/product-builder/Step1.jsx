@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
         <>
         <div className="flex justify-center items-center">
 
-          <div className="flex justify-center gap-2 rounded-md  px-3 py-2 bg-[#e1999f]/30">
+          <div className="flex justify-center gap-2 rounded-md  px-2 py-1 bg-[#e1999f]/30">
                 <button className={`rounded-md  px-4 py-2 duration-500 ${types === 'pattern' ? "bg-[#e1999f] text-white" : "text-[#2B2B2B]/50 hover:bg-[#e1999f]/40"}`} onClick={()=>setTypes('pattern')}>PATTERNS </button>
                 <button className={`rounded-md  px-4 py-2 duration-500 ${types === 'plain' ? "bg-[#e1999f] text-white" : "text-[#2B2B2B]/50 hover:bg-[#e1999f]/40"}`} onClick={()=>setTypes('plain')}>PLAIN FABRICS</button>
           </div>
