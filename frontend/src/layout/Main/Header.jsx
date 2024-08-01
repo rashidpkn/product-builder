@@ -393,11 +393,11 @@ export default function Header() {
       </div>}
 
       <>
-        <div className="flex justify-around items-center lg:hidden text-black h-16  text-2xl font-semibold border-t-2 border-t-neutral-200">
+        {/* <div className="flex justify-around items-center lg:hidden text-black h-16  text-2xl font-semibold border-t-2 border-t-neutral-200">
           <h1 className='' onClick={() => { setMega(prev => !prev);setmega2(false) }}>Blinds</h1>
           <h1 onClick={() => { setmega2(prev => !prev);setMega(false) }}>Curtains</h1>
-        </div>
-        {mega && <div className="w-full bg-white  z-50 fixed top-[11.4rem] left-0 h-[calc(100vh-184px)] overflow-y-scroll grid grid-cols-2 p-5">
+        </div> */}
+        {/* {mega && <div className="w-full bg-white  z-50 fixed top-[11.4rem] left-0 h-[calc(100vh-184px)] overflow-y-scroll grid grid-cols-2 p-5">
 
 
           
@@ -461,8 +461,8 @@ export default function Header() {
          
           </div>
          
-        </div>}
-        {mega2 && <div className="w-full bg-white  z-50 fixed top-[11.4rem] left-0 h-[calc(100vh-184px)] overflow-y-scroll grid grid-cols-2 p-5">
+        </div>} */}
+        {/* {mega2 && <div className="w-full bg-white  z-50 fixed top-[11.4rem] left-0 h-[calc(100vh-184px)] overflow-y-scroll grid grid-cols-2 p-5">
           <Link to={'https://my-thread.com/curtains/pencil-curtains/'}>
             <div className="">
               <img src="/nav-image/curtains/1.webp" className='w-[163px] h-[190px] rounded-2xl' alt="" />
@@ -548,7 +548,7 @@ export default function Header() {
           <Link to={'https://my-thread.com/curtains/'}><button>Shop all Curtains</button></Link>
           <Icon className='text-2xl text-green-900' icon={'eva:arrow-forward-fill'} />
           </div>
-          </div>}
+          </div>} */}
       </>
 
 
