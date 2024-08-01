@@ -350,7 +350,7 @@ export default function Header() {
         </div>
 
         <div className="flex justify-between px-5 items-center lg:hidden z-50 ">
-          <img className='w-[120px]' src="/img/logo/logo.svg" alt="" />
+          <Link to={''}><img className='w-[120px]' src="/img/logo/logo.svg" alt="" /></Link>
           <div className="flex justify-center items-center gap-5 text-base">
             <a href="tel:+97154888737" className='text-[#243029] font-medium'>+971 54 888 1737</a>
             <img src="/icons/cart.png" alt="cart icon" />
