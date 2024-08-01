@@ -69,7 +69,7 @@ if(parseInt(h) > 100){
       <div className=" fixed lg:absolute bottom-0  lg:inset-y-0 lg:my-auto lg:right-48  h-[45%] lg:h-[95%] 2xl:h-[85%]  max-w-[100%]  lg:max-w-[28rem] 2xl:max-w-[33rem]  w-full bg-white  rounded-lg p-8 lg:overflow-hidden">
         <div className="flex justify-between items-center">
           <div className="">
-            <h1 className="font-[Recoleta] text-4xl font-[1000] capitalize">{hangingStyle} </h1>
+            <h1 className="font-[Recoleta] text-xl lg:text-4xl font-[1000] capitalize">{hangingStyle} </h1>
             <p className="text-lg font-medium">AED {price.toFixed(2)}</p>
             {step === 1 && <p className="text-lg">Fabric</p>}
             {step === 2 && <p className="text-lg">Measurement</p>}
@@ -80,8 +80,8 @@ if(parseInt(h) > 100){
             <Icon icon={'ooui:previous-ltr'} className="text-black text-2xl" />
           </button>}
         </div>
-        <hr className="my-8" />
-        <div className="overflow-y-auto  h-[calc(100%-250px)] lg:h-[calc(100%-300px)] " ref={menu}>
+        <hr className="my-3 lg:my-8" />
+        <div className="overflow-y-auto  h-full lg:h-[calc(100%-300px)] " ref={menu}>
           <div className="overflow-hidden pb-3" ref={subMenu}>
           {step === 1 && <Step1 />}
           {step === 2 && <Step2 />}

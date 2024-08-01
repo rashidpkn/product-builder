@@ -42,7 +42,7 @@ import { useEffect, useState } from "react";
             </div>
 
           </div>
-          <div className="p-3 border rounded mt-6">
+          <div className="p-3 border rounded lg:mt-6">
             <p className="text-xs font-medium text-[#212122]">
               Select a color to request a sample
             </p>
