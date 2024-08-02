@@ -27,14 +27,14 @@ export default function Header() {
   
   return (
     <>
-      <header className=' lg:flex justify-between relative z-50 bg-white font-[Recoleta]' >
-        <div className="hidden lg:block w-[185px] p-5">
+      <header className=' lg:flex justify-between relative z-50 bg-[#f9f1f0] font-[Recoleta]' >
+        <div className="hidden lg:block w-[230px] px-6 mt-3 ">
           <a href="https://my-thread.com">
             <img src="/img/logo/logo.svg" alt="" />
           </a>
         </div>
         <div className="w-full">
-          <div className="bg-[#e1999f] h-9 lg:rounded-bl-lg flex justify-end items-center text-white gap-8 px-5 text-[15px] font-medium">
+          <div className="bg-[#e1999f] h-9 lg:rounded-bl-lg flex justify-end items-center text-white gap-8  text-[15px] font-medium">
             <div className="w-full">
               {/* style="translate: none; rotate: none; scale: none; transform: translate3d(-58.0343px, 0px, 0px) width=100%" */}
               <marquee direction="left" behavior="scroll" scrollamount="4">
@@ -53,7 +53,7 @@ export default function Header() {
           </div>
           <div className="hidden lg:flex justify-between items-center px-5 h-[91px]">
             <div className=""></div>
-            <ul className='flex gap-28 text-lg text-[#243029] font-[500] h-full'>
+            <ul className='flex gap-[4.8rem] text-lg text-[#243029] font-[500] h-full'>
 
               <li className=' h-full flex justify-center gap-1 items-center group overflow-hidden'><a className='hover:text-[#fec500]' href="https://my-thread.com/curtains">Shop </a><Icon onClick={() => setShopArrow(_ => !_)} className={`${shopArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} />
                 <div className="absolute overflow-hidden w-full top-[125px] left-0 h-0 bg-[#e1999f] duration-200 group-hover:h-screen group-hover:overflow-y-auto">
@@ -342,9 +342,9 @@ export default function Header() {
               <li className='hover:text-[#fec500] h-full flex justify-center items-center'><a href="https://my-thread.com/free-sample">Free Sample </a></li>
             </ul>
 
-            <div className="flex justify-center items-center gap-5">
+            <div className="flex justify-center items-center gap-2">
               <a href="tel:+97154888737" className='text-[#243029] font-medium'>+971 54 888 1737</a>
-              <img src="/icons/cart.png" alt="cart icon" />
+              <img className='mb-3' src="/icons/cart.png" alt="cart icon" />
             </div>
           </div>
         </div>

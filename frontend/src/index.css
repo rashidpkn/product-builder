@@ -4,11 +4,11 @@
 
 @font-face {
     font-family: Recoleta;
-    src: url("/font/Recoleta-Regular.otf") format("opentype");
+    src: url("/font/Recoleta-Medium.woff") format("woff");
 }
 
 *{
-  font-family: Recoleta Georgia, 'Times New Roman', Times, serif;
+  font-family: Recoleta !important;
 }
 
 /* .free-consultation{
