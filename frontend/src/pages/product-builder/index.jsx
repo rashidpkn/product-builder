@@ -70,7 +70,7 @@ if(parseInt(h) > 100){
         <div className="flex justify-between items-center">
           <div className="">
             <h1 className="font-[Recoleta] text-xl lg:text-4xl font-[1000] capitalize">{hangingStyle} </h1>
-            <p className="text-lg font-medium">AED {price.toFixed(2)}</p>
+            <p className="text-lg font-medium font-[Recoleta]">AED {price.toFixed(2)}</p>
             {step === 1 && <p className="text-lg">Fabric</p>}
             {step === 2 && <p className="text-lg">Measurement</p>}
             {step === 3 && <p className="text-lg">Style</p>}
