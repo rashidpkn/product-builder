@@ -27,7 +27,7 @@ export default function Header() {
   
   return (
     <>
-      <header className=' lg:flex justify-between relative z-50 bg-white' >
+      <header className=' lg:flex justify-between relative z-50 bg-white font-[Recoleta]' >
         <div className="hidden lg:block w-[185px] p-5">
           <a href="https://my-thread.com">
             <img src="/img/logo/logo.svg" alt="" />
