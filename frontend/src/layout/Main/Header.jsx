@@ -57,7 +57,7 @@ export default function Header() {
 
               <li className=' h-full flex justify-center gap-1 items-center group overflow-hidden'><a className='hover:text-[#fec500]' href="https://my-thread.com/curtains">Shop </a><Icon onClick={() => setShopArrow(_ => !_)} className={`${shopArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} />
                 <div className="absolute overflow-hidden w-full top-[125px] left-0 h-0 bg-[#e1999f] duration-200 group-hover:h-screen group-hover:overflow-y-auto">
-                  <div className="p-8 gap-5 grid grid-cols-4 py-16 ">
+                  <div className="p-8 gap-5 grid grid-cols-4 py-16 max-w-[1540px] mx-auto">
                     <Link to={'https://my-thread.com/curtains/'}>
                       <div className="min-h-[360px] h-full w-full relative card">
                         <div className="absolute left-[2rem] bottom-6  text-xl text-white">
@@ -165,7 +165,7 @@ export default function Header() {
 
               <li className=' h-full flex justify-center items-center group overflow-hidden'><a className='hover:text-[#fec500]' href="https://my-thread.com/fabric">Fabric </a><Icon onClick={() => setnavArrow(_ => !_)} className={`${navArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} />
                 <div className="absolute overflow-hidden w-full top-[125px] left-0 max-w-[1540px] h-0 bg-[#e1999f] duration-200 group-hover:h-[30rem]">
-                  <div className="px-[7%] py-[3%] gap-5 grid grid-cols-2 h-full">
+                  <div className="px-[7%] py-[3%] gap-5 grid grid-cols-2 h-full max-w-[1540px] mx-auto">
                     <Link to={'https://my-thread.com/fabric/'}>
                       <div className="min-h-[360px] h-[300px] w-full relative card">
                         <div className="absolute left-[2rem] bottom-6 text-xl text-white">
@@ -214,8 +214,8 @@ export default function Header() {
 
               <li className='hover:text-[#fec500] h-full flex justify-center items-center'><a href="https://my-thread.com/our-works">Our Works </a></li>
               <li className='hover:text-[#fec500] h-full flex justify-center items-center group overflow-hidden'><a href="#">Commercial </a><Icon onClick={() => settopArrow(_ => !_)} className={`${topArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} />
-                <div className="absolute overflow-hidden w-full top-[125px] left-0 h-0 max-w-[1540px]  bg-[#e1999f] duration-200 group-hover:h-screen group-hover:overflow-y-auto">
-                  <div className="p-8 gap-5 grid grid-cols-4 ">
+                <div className="absolute overflow-hidden w-full top-[125px] left-0 h-0   bg-[#e1999f] duration-200 group-hover:h-screen group-hover:overflow-y-auto">
+                  <div className="p-8 gap-5 grid grid-cols-4 max-w-[1540px] mx-auto">
                     <Link to={'https://my-thread.com/Office-blinds-Curtains/'}>
                       <div className="min-h-[360px] h-full w-full relative card">
                         <div className="absolute left-[2rem] bottom-6 text-xl text-white">
