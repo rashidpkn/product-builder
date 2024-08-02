@@ -164,7 +164,7 @@ export default function Header() {
               </li>
 
               <li className=' h-full flex justify-center items-center group overflow-hidden'><a className='hover:text-[#fec500]' href="https://my-thread.com/fabric">Fabric </a><Icon onClick={() => setnavArrow(_ => !_)} className={`${navArrow && 'rotate-180'} `} icon={'iconoir:nav-arrow-up'} />
-                <div className="absolute overflow-hidden w-full top-[125px] left-0 max-w-[1540px] h-0 bg-[#e1999f] duration-200 group-hover:h-[30rem]">
+                <div className="absolute overflow-hidden w-full top-[125px] left-0 h-0 bg-[#e1999f] duration-200 group-hover:h-[30rem]">
                   <div className="px-[7%] py-[3%] gap-5 grid grid-cols-2 h-full max-w-[1540px] mx-auto">
                     <Link to={'https://my-thread.com/fabric/'}>
                       <div className="min-h-[360px] h-[300px] w-full relative card">
