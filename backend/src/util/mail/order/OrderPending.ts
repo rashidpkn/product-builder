@@ -41,10 +41,6 @@ const orderPending = (customer:customerType,fabric:fabricType)=>{
                         <td style="text-align: right;">${customer.emirate}</td>
                     </tr>
                     <tr>
-                        <td>City</td>
-                        <td style="text-align: right;">${customer.city}</td>
-                    </tr>
-                    <tr>
                         <td>Type</td>
                         <td style="text-align: right;">${customer.type}</td>
                     </tr>

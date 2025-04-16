@@ -3,7 +3,6 @@ type customerType = {
   lName: string;
   country: string;
   emirate: string;
-  city: string;
   type: string;
   streetAddress: string;
   apartment: string;

@@ -4,6 +4,7 @@ import { customerType, fabricType } from './types';
 import { orderPlaced } from 'src/util/mail/order/orderPlaced';
 import { createInvoice, createOrder, generateAccessToken } from 'src/services/ngenius-payments';
 import { orderPending } from 'src/util/mail/order/OrderPending';
+import { OrdersModel } from './model/order.model';
 
 @Controller('api/order')
 export class OrderController {
@@ -17,7 +18,7 @@ export class OrderController {
 
       const {access_token} = await generateAccessToken()
 
-      // const description = `Type: ${fabric.type}, Cover Type: ${fabric.coverType}, Window Type: ${fabric.windowType}, Room Name: ${fabric.roomName}, Live In Dubai: ${fabric.liveInDubai}, Height: ${fabric.height}, Width: ${fabric.width}, Panel Type: ${fabric.panelType}, Hanging Style: ${fabric.hangingStyle}, Lining: ${fabric.lining}, Installation Method: ${fabric.installationMethod}, Installation Item: Name - ${fabric.installationItem.name}, Material - ${fabric.installationItem.meterial}, SQM: ${fabric.sqm}, Making Price: ${fabric.price}, Boxed & Postage: ${50}`;
+      const description = `Type: ${fabric.type}, Cover Type: ${fabric.coverType}, Window Type: ${fabric.windowType}, Room Name: ${fabric.roomName}, Live In Dubai: ${fabric.liveInDubai}, Height: ${fabric.height}, Width: ${fabric.width}, Panel Type: ${fabric.panelType}, Hanging Style: ${fabric.hangingStyle}, Lining: ${fabric.lining}, Installation Method: ${fabric.installationMethod}, Installation Item: Name - ${fabric.installationItem.name}, Material - ${fabric.installationItem.meterial}, SQM: ${fabric.sqm}, Making Price: ${fabric.price}, Boxed & Postage: ${50}`;
 
      
 
@@ -50,15 +51,20 @@ export class OrderController {
 
       const data = await createOrder({
         access_token,
-        action:"PURCHASE",
+        action:"SALE",
         amount:{
           currencyCode:"AED",
           value:(fabric.price+50) * 100
         },
         emailAddress:customer.email,
       })
+
       
-      orderPending(customer,fabric)
+
+      // orderPending(customer,fabric)
+
+      await OrdersModel.create({customer,fabric,reference:data.reference})
+
       return {message:"Order placed",data:data}
 
     } catch (error) {}
@@ -66,8 +72,23 @@ export class OrderController {
 
 
 @Post('/webhook')
-webhook(@Body() body:any){
-    console.log(body);
+async webhook(@Body() body:any){
+  console.log(body);
+    try {
+      const {eventName,order:{reference}} = body
+      if(eventName === "PURCHASED"){
+        const order = await OrdersModel.findOne({reference})
+        order.status = "completed"
+
+        await order.save()
+        await orderPlaced(order.customer,order.fabric)
+        return {
+          message:"OK",
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
 }
 
 }

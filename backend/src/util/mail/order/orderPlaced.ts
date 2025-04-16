@@ -1,7 +1,7 @@
 import { customerType, fabricType } from "src/order/types";
 import { sendMail } from "..";
 
-const orderPlaced = (customer:customerType,fabric:fabricType)=>{
+const orderPlaced =async (customer:customerType,fabric:fabricType)=>{
     
     const html = `
       <div class="mail-temp" style="max-width: 650px; width: 100%; margin: auto; font-family: sans-serif;">
@@ -39,10 +39,6 @@ const orderPlaced = (customer:customerType,fabric:fabricType)=>{
                     <tr>
                         <td>Emirate / Province</td>
                         <td style="text-align: right;">${customer.emirate}</td>
-                    </tr>
-                    <tr>
-                        <td>City</td>
-                        <td style="text-align: right;">${customer.city}</td>
                     </tr>
                     <tr>
                         <td>Type</td>
@@ -141,8 +137,8 @@ const orderPlaced = (customer:customerType,fabric:fabricType)=>{
     `
 
     try {
-        sendMail(customer.email,"Order placed",html)
-        sendMail('info@my-thread.com',"Order placed",html)
+        await sendMail(customer.email,"Order placed",html)
+        await sendMail('info@my-thread.com',"Order placed",html)
     } catch (error) {
         console.log("Error")
     }
