@@ -3,7 +3,7 @@ import axios from "axios";
 let baseURL = '/api'
 
 if (import.meta.env.MODE === 'development') {
-    baseURL = 'http://localhost:3000/api'
+    baseURL = 'https://productbuilder.my-thread.com/api'
 }
 
 const api = axios.create({

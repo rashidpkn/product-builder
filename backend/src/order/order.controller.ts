@@ -16,7 +16,7 @@ export class OrderController {
 
       const {access_token} = await generateAccessToken()
 
-      const description = `Type: ${fabric.type}, Cover Type: ${fabric.coverType}, Window Type: ${fabric.windowType}, Room Name: ${fabric.roomName}, Live In Dubai: ${fabric.liveInDubai}, Height: ${fabric.height}, Width: ${fabric.width}, Panel Type: ${fabric.panelType}, Hanging Style: ${fabric.hangingStyle}, Lining: ${fabric.lining}, Installation Method: ${fabric.installationMethod}, Installation Item: Name - ${fabric.installationItem.name}, Material - ${fabric.installationItem.meterial}, SQM: ${fabric.sqm}, Price: ${fabric.price}`;
+      const description = `Type: ${fabric.type}, Cover Type: ${fabric.coverType}, Window Type: ${fabric.windowType}, Room Name: ${fabric.roomName}, Live In Dubai: ${fabric.liveInDubai}, Height: ${fabric.height}, Width: ${fabric.width}, Panel Type: ${fabric.panelType}, Hanging Style: ${fabric.hangingStyle}, Lining: ${fabric.lining}, Installation Method: ${fabric.installationMethod}, Installation Item: Name - ${fabric.installationItem.name}, Material - ${fabric.installationItem.meterial}, SQM: ${fabric.sqm}, Making Price: ${fabric.price}, Boxed & Postage: ${50}`;
 
       const data = await createInvoice({
         "firstName": customer.fName,
@@ -30,14 +30,14 @@ export class OrderController {
             "description": description,
             "totalPrice": {
               "currencyCode": "AED",
-              "value": fabric.price*100
+              "value": (fabric.price+50)*100
             },
             "quantity": 1
           }
         ],
         "total": {
           "currencyCode": "AED",
-          "value": fabric.price*100
+          "value": (fabric.price+50)*100
         },
         "message": `Thank you for your curtain customization details. We've received your quote and will proceed with the next steps.`,
         access_token: access_token,

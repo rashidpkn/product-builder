@@ -48,7 +48,7 @@ export default function Estimate({ setStep }) {
       const {data} =await api.post('/order',{customer,fabric})
 
       alert("Your order has placed!")
-      window.location.href = 'https://my-thread.com'
+      window.location.href = data.data._links.payment.href
       
     } catch (error) {
       
