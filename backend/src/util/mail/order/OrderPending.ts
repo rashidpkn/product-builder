@@ -141,8 +141,8 @@ const orderPending = (customer:customerType,fabric:fabricType)=>{
     `
 
     try {
-        sendMail(customer.email,"Order placed",html)
-        sendMail('info@my-thread.com',"Order placed",html)
+        sendMail(customer.email,"Your Order Pending",html)
+        sendMail('info@my-thread.com',"Order Pending",html)
     } catch (error) {
         console.log("Error")
     }
