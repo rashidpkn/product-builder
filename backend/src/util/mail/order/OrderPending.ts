@@ -1,7 +1,7 @@
 import { customerType, fabricType } from "src/order/types";
 import { sendMail } from "..";
 
-const orderPlaced = (customer:customerType,fabric:fabricType)=>{
+const orderPending = (customer:customerType,fabric:fabricType)=>{
     
     const html = `
       <div class="mail-temp" style="max-width: 650px; width: 100%; margin: auto; font-family: sans-serif;">
@@ -20,8 +20,8 @@ const orderPlaced = (customer:customerType,fabric:fabricType)=>{
         </tr>
         <tr>
             <td>
-                <h2 style="text-align: center; font-size: 25px; font-weight: 700; color: #e1999f;">Your Order Placed</h2>
-                <p style="font-size: 14px; text-align: center;">Thank you for choosing My-Thread.com! We appreciate your order and are excited to deliver your curtains to you within the next 10 days. Our team is committed to ensuring your satisfaction every step of the way. Should you have any questions or need further assistance, please don't hesitate to reach out to our customer service team. We look forward to delighting you with our products!</p>
+                <h2 style="text-align: center; font-size: 25px; font-weight: 700; color: #e1999f;">Your Order  Pending</h2>
+                <p style="font-size: 14px; text-align: center;">Thank you for choosing My-Thread.com! We noticed that your order is still pending and not yet completed. We’re excited to help you bring beautiful curtains to your space, and just one more step is needed to get things moving. Once your payment is confirmed, we’ll begin processing your order and aim to deliver within the next 10 days. If you have any questions or need help finalizing your purchase, our customer support team is here for you. We can’t wait to serve you!</p>
             </td>
         </tr>
         <tr>
@@ -150,4 +150,4 @@ const orderPlaced = (customer:customerType,fabric:fabricType)=>{
 
 }
 
-export {orderPlaced}
+export {orderPending}

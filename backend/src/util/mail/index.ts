@@ -1,10 +1,11 @@
 import * as nodemailer from 'nodemailer'
 
 const transporter = nodemailer.createTransport({
-  host: 'smtppro.zoho.com',
+  host: 'smtp.zeptomail.com',
+  port:587,
   auth: {
-      user: 'info@my-thread.com',
-      pass: 'e8aZkrdLZQrk'
+      user: 'emailapikey',
+      pass: 'wSsVR613/BGmWKd/lTD8IrhqnFhXDgzxHEV/2Aby63L0Gv3H9Mc6lBefBgSlHfJJF29rFTMS9b4unxpRhGcJiostzA4IXCiF9mqRe1U4J3x17qnvhDzIXGVbkReLK4oNzgxqk2dpE80g+g=='
   }
   });
   
@@ -21,11 +22,10 @@ const transporter = nodemailer.createTransport({
       };
 
       const {response} = await transporter.sendMail(mailOptions)
-      console.log('The email has  sent.');
+      console.log('The email has  sent to :',to );
       return response
     } catch (error) {
-      console.log();
-      console.log('The email has not been sent to.' + to);
+      console.log('The email has not been sent to :' ,to);
     }
 
       
