@@ -75,9 +75,16 @@ export class OrderController {
 async webhook(@Body() body:any){
   console.log(body);
     try {
-      const {eventName,order:{reference}} = body
-      if(eventName === "PURCHASED"){
+      const {eventName} = body
+      if(eventName === "PURCHASED" ||  eventName === "CAPTURED"){
+        const {order:{reference}} = body
         const order = await OrdersModel.findOne({reference})
+
+        if(order.status !== "pending"){
+          return {
+            message:"OK",
+          }  
+        }
         order.status = "completed"
 
         await order.save()
@@ -85,6 +92,9 @@ async webhook(@Body() body:any){
         return {
           message:"OK",
         }
+      }
+      return {
+        message:"OK",
       }
     } catch (error) {
       console.log(error);
