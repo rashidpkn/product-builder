@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCustomer } from "../../redux/slice/customer";
 import { Icon } from "@iconify/react/dist/iconify.js";
@@ -7,6 +7,9 @@ import { api } from "../../util/api";
 export default function Estimate({ setStep }) {
 
   const {customer,fabric} =  useSelector((state) => state);
+
+  const [agree, setAgree] = useState(false)
+    const [loading , setLoading] = useState(false)
 
   const {
     type: fabricType,
@@ -43,19 +46,21 @@ export default function Estimate({ setStep }) {
 
   const placeOrder = useCallback(async (e) => {
     try {
+      setAgree(true)
       e.preventDefault();
 
       const {data} =await api.post('/order',{customer,fabric})
-
-      alert("Your order has placed!")
       window.location.href = data.data._links.payment.href
       
     } catch (error) {
       
+    }finally{
+      setLoading(false)
     }
     
   }, [customer]);
 
+    
 
   return (
     <div className="h-full w-full absolute top-0 left-0 flex justify-center items-center z-40 backdrop-blur-[24px]">
@@ -229,7 +234,7 @@ export default function Estimate({ setStep }) {
               </option>
             </select>
 
-            <input
+            {/* <input
               type="text"
               className="bg-transparent border-b outline-none placeholder:text-white/80"
               value={city}
@@ -238,7 +243,7 @@ export default function Estimate({ setStep }) {
               }
               placeholder="City"
               required
-            />
+            /> */}
             <div className="flex items-center gap-5">
               <div className="flex items-center gap-1">
                 <input
@@ -322,15 +327,25 @@ export default function Estimate({ setStep }) {
               required
             />
 
-            <div className="flex items-center gap-1">
-              <input type="checkbox" name="" id="tac"  required/>
+            <div className="flex items-center gap-1 col-span-full">
+              <input type="checkbox" name="" id="tac"  required checked={agree} onChange={e=>setAgree(e.target.checked)}/>
               <label htmlFor="tac">I agree to the terms and conditions</label>
             </div>
           </div>
           <div className="flex justify-center items-center mt-10">
-            <button className="border rounded-lg px-3 py-1 hover:rounded text-xl duration-200">
-              Place Order
-            </button>
+          <button
+  className="border rounded-lg px-3 py-1 text-xl duration-200 disabled:opacity-75 flex items-center justify-center gap-2 hover:rounded"
+  disabled={!agree || loading}
+>
+  {loading ? (
+    <>
+      <span className="animate-spin inline-block w-5 h-5 border-2 border-t-transparent border-white rounded-full"></span>
+      <span className="animate-pulse">Loading...</span>
+    </>
+  ) : (
+    "Place Order"
+  )}
+</button>
           </div>
         </form>
       </div>
