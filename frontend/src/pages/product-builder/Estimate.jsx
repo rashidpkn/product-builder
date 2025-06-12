@@ -1,10 +1,10 @@
-import React, { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCustomer } from "../../redux/slice/customer";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { api } from "../../util/api";
 
-export default function Estimate({ setStep }) {
+export default function Estimate({setStep}) {
 
   const {customer,fabric} =  useSelector((state) => state);
 
@@ -31,7 +31,7 @@ export default function Estimate({ setStep }) {
     lName,
     country,
     emirate,
-    city,
+    // city,
     type,
 
     streetAddress,
@@ -49,16 +49,36 @@ export default function Estimate({ setStep }) {
       setAgree(true)
       e.preventDefault();
 
-      const {data} =await api.post('/order',{customer,fabric})
-      window.location.href = data.data._links.payment.href
+      const body ={
+        customer:{
+          first_name:fName,
+          last_name:lName,
+          email
+        },
+        items:[
+          {
+            name:`${fabricType} - ${coverType} - ${height} CM x ${width} CM`,
+            amount:price,
+            quantity:1
+          },
+          {
+            name:`Boxed & Postage`,
+            amount:"50",
+            quantity:1
+          },
+        ]
+      }
+
+      const {data} =await api.post('/orders',body)
+      window.location.href = data.data.url
       
     } catch (error) {
-      
+      console.log(error);
     }finally{
       setLoading(false)
     }
     
-  }, [customer]);
+  }, [coverType,email,fName,fabricType,height,lName,price,width]);
 
     
 

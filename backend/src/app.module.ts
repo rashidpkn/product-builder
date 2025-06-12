@@ -9,7 +9,7 @@ import { join } from 'path';
   imports: [
     OrderModule,
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', '..','frontend','build'),
+      rootPath: join(__dirname, '..', '..', 'frontend', 'build'),
     }),
   ],
   controllers: [AppController],

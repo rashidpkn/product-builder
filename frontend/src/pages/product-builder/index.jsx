@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFabric } from "../../redux/slice/fabric";
 import { Icon } from "@iconify/react/dist/iconify.js";
@@ -49,7 +49,7 @@ if(parseInt(h) > 100){
   dispatch(setFabric({key:'width',value:parseInt(w)}))
 }
 
-}, [])
+}, [dispatch,h,style,w])
 
 
   return (

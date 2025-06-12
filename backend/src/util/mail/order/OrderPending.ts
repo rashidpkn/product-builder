@@ -1,9 +1,8 @@
-import { customerType, fabricType } from "src/order/types";
-import { sendMail } from "..";
+import { customerType, fabricType } from 'src/order/types';
+import { sendMail } from '..';
 
-const orderPending = (customer:customerType,fabric:fabricType)=>{
-    
-    const html = `
+const orderPending = (customer: customerType, fabric: fabricType) => {
+  const html = `
       <div class="mail-temp" style="max-width: 650px; width: 100%; margin: auto; font-family: sans-serif;">
     <table style="width: 100%; border-collapse: collapse;">
         <tr>
@@ -134,16 +133,14 @@ const orderPending = (customer:customerType,fabric:fabricType)=>{
     </table>
 </div>
 
-    `
+    `;
 
-    try {
-        sendMail(customer.email,"Your Order Pending",html)
-        sendMail('info@my-thread.com',"Order Pending",html)
-    } catch (error) {
-        console.log("Error")
-    }
+  try {
+    sendMail(customer.email, 'Your Order Pending', html);
+    sendMail('info@my-thread.com', 'Order Pending', html);
+  } catch (error) {
+    console.log('Error');
+  }
+};
 
-
-}
-
-export {orderPending}
+export { orderPending };

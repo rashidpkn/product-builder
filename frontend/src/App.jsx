@@ -1,4 +1,3 @@
-import React from "react";
 import ProductBuilder from "./pages/product-builder";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "./layout/Main";

@@ -33,7 +33,7 @@ const Step4 = () =>{
 {
   installationMethod === 'track' &&
   <div className="grid grid-cols-3 gap-3  lg:px-10 mt-6">
-      {PoleAndTrack.map(e=>e.type ==='track' && <div className={`h-24 flex justify-center items-center border ${installationItem.name === e.name && installationItem.meterial === e.meterial && 'border-4 border-[#e1999f] rounded'}`} onClick={()=>{
+      {PoleAndTrack.map((e,i)=>e.type ==='track' && <div key={i} className={`h-24 flex justify-center items-center border ${installationItem.name === e.name && installationItem.meterial === e.meterial && 'border-4 border-[#e1999f] rounded'}`} onClick={()=>{
         dispatch(setFabric({key:'installationItem' , value:{name:e.name,meterial:e.meterial}}))
       }}
       title={e.name +' ' + e.meterial}
@@ -46,7 +46,7 @@ const Step4 = () =>{
 {
   installationMethod === 'pole' &&
   <div className="grid grid-cols-3 gap-3  lg:px-10 mt-6">
-      {PoleAndTrack.map(e=>e.type ==='pole' && <div className={`h-24 flex justify-center items-center border ${installationItem.name === e.name && installationItem.meterial === e.meterial && 'border-4 border-[#e1999f] rounded'}`} onClick={()=>{
+      {PoleAndTrack.map((e,i)=>e.type ==='pole' && <div key={i} className={`h-24 flex justify-center items-center border ${installationItem.name === e.name && installationItem.meterial === e.meterial && 'border-4 border-[#e1999f] rounded'}`} onClick={()=>{
         dispatch(setFabric({key:'installationItem' , value:{name:e.name,meterial:e.meterial}}))
       }}
       title={e.name +' ' + e.meterial}

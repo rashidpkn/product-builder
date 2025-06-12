@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setFabric } from "../../redux/slice/fabric";
 import { fabrics } from "./fabrics";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
  const Step1 = () => {
     const dispatch = useDispatch()
