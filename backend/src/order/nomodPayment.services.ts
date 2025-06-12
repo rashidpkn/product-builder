@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 const api = axios.create({
   baseURL: 'https://api.nomod.com',
   headers: {
-    'X-API-KEY': 'sk_live_wOwxDzVn.6MrGbfuL49qsyE6zal1Sj38lvt3BBOoM',
+    'X-API-KEY': 'xxxxxxxx',
     'Content-Type': 'application/json',
   },
 });
