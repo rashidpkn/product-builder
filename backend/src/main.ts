@@ -3,9 +3,9 @@ import { AppModule } from './app.module';
 import connectToDatabase from './services/database';
 
 async function bootstrap() {
-  connectToDatabase(
-    'xxxx',
-  );
+  // connectToDatabase(
+  //   'xxxx',
+  // );
   const app = await NestFactory.create(AppModule);
   app.enableCors({
     origin: '*',
